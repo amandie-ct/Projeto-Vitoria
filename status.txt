@@ -1,0 +1,5 @@
+1- mudar a cor do botão do carrossel (ok)
+2- questao 21 aleatorizar (+- ok, falta reordenar no final)
+3- questao 24 resposta tem que ser n (V ou F)s, onde n eh o numero de fotos (em andamento)
+4- mapear os values dos inputs para valores numericos
+5- testar
