@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pesquisa de mestrado - Vitória Fernandes</title>
+
+    <script src="./src/jquery.js"></script>
+    <script src="./src/popper.js"></script>
+    <link rel="stylesheet" href="./src/bootstrap.css" />
+    <script src="./src/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="./src/app.css" />
+</head>
+
+<body class="container">
+    <a class="btn btn-success my-5 ml-5" href="opcoes.html">Ver opções</a>
+
+    <!-- Aqui fica o cabeçalho, com as informações de Vitória e do mestrado dela-->
+    <header>
+        <h3>Universidade Federal do Rio Grande do Norte</h3>
+        <h3>Programa de pós-graduação em Desenvolvimento e Meio Ambiente</h3>
+        <h3>Centro de Biociências</h3>
+    </header>
+
+    <form onsubmit="readFormData(event)">
+        <div>
+            <input type="hidden" />
+        </div>
+
+        <!-- PARTE 1 - PERGUNTAS -->
+        <div class="form-group">
+            1. Sexo<br />
+            <input required type="radio" name="sexo" value="1" id="sexo-feminino" />
+            <label for="sexo-feminino">Feminino</label>
+
+            <!-- não tem problema quebrar as linhas assim nos inputs (ou em qlqr outra tag html). é só uma questão de organização -->
+
+            <input required type="radio" name="sexo" value="2" id="sexo-masculino" />
+            <label for="sexo-masculino">Masculino</label>
+
+            <input required type="radio" name="sexo" value="3" id="n_declarado" />
+            <label for="n_declarado"> Não declarado</label>
+        </div>
+
+        <div class="form-group">
+            2. Idade <br />
+
+            <input required type="text" name="idade" size="3" /><br />
+        </div>
+
+        <div class="form-group">
+            <label for="cidade_comunidade">3. Cidade/comunidade</label><br />
+            <input required type="text" name="cidade" id="cidade_comunidade" size="50" /><br />
+        </div>
+
+        <div class="form-group">
+            4. Tempo de moradia no local: <br />
+            <input required type="radio" name="tempo_moradia" value="1" />Até 10 anos
+            <br />
+            <input required type="radio" name="tempo_moradia" value="2" /> 11 a 15 anos
+            <br />
+            <input required type="radio" name="tempo_moradia" value="3" /> 16 a 25 anos
+            <br />
+            <input required type="radio" name="tempo_moradia" value="4" /> 26 a 35 anos
+            <br />
+            <input required type="radio" name="tempo_moradia" value="5" /> 36 a 45 anos
+            <br />
+            <input required type="radio" name="tempo_moradia" value="6" /> Há mais de 46 anos<br />
+        </div>
+
+        <div class="form-group">
+            5. Ocupação: <br />
+
+            <input required type="radio" name="ocupacao" value="1"> Agricultor em meio período<br>
+            <input required type="radio" name="ocupacao" value="2"> Agricultor tempo integral<br>
+            <input required type="radio" name="ocupacao" value="3"> Pecuarista<br>
+            <input required type="radio" name="ocupacao" value="4"> Dona de casa<br>
+            <input required type="radio" name="ocupacao" value="5"> Tratador CETAS<br>
+            <input required type="radio" name="ocupacao" value="6"> Funcionário CETAS<br>
+            <input required type="radio" name="ocupacao" value="7"> Estudante<br>
+            <input required type="radio" name="ocupacao" value="8"> Outro<br>
+
+        </div>
+
+        <div class="form-group">
+            6. Escolaridade: <br />
+            <input required type="radio" name="escolaridade" value="1" /> Não alfabetizado
+            <br />
+            <input required type="radio" name="escolaridade" value="2" /> Ensino fundamental I (até 5ª série) incompleto
+            <br />
+            <input required type="radio" name="escolaridade" value="3" /> Ensino fundamental I (até 5ª série) completo
+            <br />
+            <input required type="radio" name="escolaridade" value="4" /> Ensino fundamental II (até 8ª série) incompleto
+            <br />
+            <input required type="radio" name="escolaridade" value="5" /> Ensino fundamental II (até 8ª série)completo
+            <br />
+            <input required type="radio" name="escolaridade" value="6" /> Ensino médio incompleto<br />
+            <input required type="radio" name="escolaridade" value="7" /> Ensino médio completo<br />
+            <input required type="radio" name="escolaridade" value="8" /> Ensino superior incompleto<br />
+            <input required type="radio" name="escolaridade" value="9" /> Ensino superior completo<br />
+            <input required type="radio" name="escolaridade" value="10" /> Pós-graduação
+            <br />
+        </div>
+
+        <div class="form-group">
+            7. Você conhece os macacos-prego? <br />
+            <input required type="radio" name="conhece_macacos" value="1" /> Sim
+            <br />
+            <input required type="radio" name="conhece_macacos" value="2" /> Não
+            <br />
+        </div>
+
+        <div class="form-group">
+            8. Em que contexto você viu macaco-prego pela primeira vez? <br />
+            <input required type="radio" name="contexto_avistamento" value="1" /> Em liberdade, na mata<br />
+            <input required type="radio" name="contexto_avistamento" value="2" /> No zoológico
+            <br />
+            <input required type="radio" name="contexto_avistamento" value="3" /> Reportagem na TV/internet<br />
+            <input required type="radio" name="contexto_avistamento" value="4" /> Como pet/de tráfico<br />
+            <input required type="radio" name="contexto_avistamento" value="5" /> Nunca vi<br />
+            <input required type="radio" name="contexto_avistamento" value="6" /> Não sei<br />
+        </div>
+
+        <div class="form-group">
+            9. Você avista macacos onde você vive? <br />
+            <input required type="radio" name="avista_macacos" value="1" /> Sim
+            <br />
+            <input required type="radio" name="avista_macacos" value="2" /> Não
+            <br />
+        </div>
+
+        <div class="form-group">
+            10. Quando foi a última vez? <br />
+            <input required type="radio" name="ultimo_avistamento" value="1" /> Nos últimos 6 meses<br />
+            <input required type="radio" name="ultimo_avistamento" value="2" /> Esse ano
+            <br />
+            <input required type="radio" name="ultimo_avistamento" value="3" /> Há menos de 5 anos<br />
+            <input required type="radio" name="ultimo_avistamento" value="4" /> Há mais de 5 anos<br />
+            <input required type="radio" name="ultimo_avistamento" value="5" /> Há mais de 10 anos<br />
+            <input required type="radio" name="ultimo_avistamento" value="6" /> Há mais de 20 anos<br />
+            <input required type="radio" name="ultimo_avistamento" value="N/a" /> Nunca vi<br />
+        </div>
+
+        <div class="form-group">
+            11. Você já soube de pessoas na região: <br /> - Caçando/matando por diversão ou defesa <br>
+            <input required type="radio" name="cacando" value="1" /> Sim
+            <input required type="radio" name="cacando" value="2" /> Não<br> - Criando <br>
+            <input required type="radio" name="criando" value="1" /> Sim
+            <input required type="radio" name="criando" value="2" /> Não<br> - Caçando pra comer/comendo <br>
+            <input required type="radio" name="comendo" value="1" /> Sim
+            <input required type="radio" name="comendo" value="2" /> Não<br> - Vendendo <br>
+            <input required type="radio" name="vendendo" value="1" /> Sim
+            <input required type="radio" name="vendendo" value="2" /> Não<br>
+
+        </div>
+
+        <div class="form-group">
+            12. Hoje em dia, quantos macacos você diria ver num mês? <br />
+
+            <input required type="radio" name="avistamento_mes" value="1" /> 0 a 5 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="2" /> 5 a 10 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="3" /> 10 a 30 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="4" /> 30 a 50 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="5" /> 50 a 100 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="6" /> Mais de 100 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes" value="7" /> Não sei
+            <br />
+        </div>
+
+        <div class="form-group">
+            13. E 5 anos atrás, quantos macacos você diria ver num mês? <br />
+            <input required type="radio" name="avistamento_mes_5" value="1" /> 0 a 5 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="2" /> 5 a 10 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="3" /> 10 a 30 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="4" /> 30 a 50 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="5" /> 50 a 100 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="6" /> Mais de 100 macacos por mês<br />
+            <input required type="radio" name="avistamento_mes_5" value="7" /> Não sei
+            <br />
+        </div>
+
+        <div class="form-group">
+            14. Você acha que a população de macacos-prego está: <br />
+            <input required type="radio" name="populacao_situacao" value="1" /> Aumentando
+            <br />
+            <input required type="radio" name="populacao_situacao" value="2" /> Diminuindo
+            <br />
+            <input required type="radio" name="populacao_situacao" value="3" /> Está a mesma coisa<br />
+            <input required type="radio" name="populacao_situacao" value="4" /> Não sei dizer<br />
+        </div>
+
+        <div class="form-group">
+            15. Se está diminuindo, por que você acha que está diminuindo? <br />
+
+            <input required type="radio" name="motivo_diminuicao" value="1" /> Caça
+            <br />
+            <input required type="radio" name="motivo_diminuicao" value="2" /> Comércio ilegal <br />
+            <input required type="radio" name="motivo_diminuicao" value="3" /> Destruição das florestas <br />
+            <input required type="radio" name="motivo_diminuicao" value="4" /> Falta de comida <br />
+            <input required type="radio" name="motivo_diminuicao" value="5" /> Brigas entre eles <br />
+            <input required type="radio" name="motivo_diminuicao" value="6" /> Não sei <br />
+            <input required type="radio" name="motivo_diminuicao" value="7" /> Não se aplica <br />
+            <input required type="radio" name="motivo_diminuicao" value="8" /> Outro
+            <br />
+            <input type="text" name="outro_motivo_diminuição" /><br />
+        </div>
+
+        <div class="form-group">
+            16. Se está aumentando, por que você acha que está aumentando? <br />
+            <input required type="radio" name="motivo_aumento" value="1" /> Muita comida <br />
+            <input required type="radio" name="motivo_aumento" value="2" /> Roubando comida da gente <br />
+            <input required type="radio" name="motivo_aumento" value="3" /> Reprodução deles <br />
+            <input required type="radio" name="motivo_aumento" value="4" /> Solturas IBAMA <br />
+            <input required type="radio" name="motivo_aumento" value="5" /> Não sei, só vejo mais do que antes <br />
+            <input required type="radio" name="motivo_aumento" value="6" /> Não se aplica <br />
+            <input required type="radio" name="motivo_aumento" value="7" /> Outro
+            <br />
+            <input type="text" name="outro_motivo_aumento" /><br />
+        </div>
+
+        <div class="form-group">
+            17. De 1 a 5, o quanto você diria que os macacos te atrapalham? <br />
+
+            <input required type="text" name="macacos_atrapalham" size="2" /><br /> 17.2. Por quê?<br />
+            <input required type="radio" name="motivo_atrapalham" value="1" /> Invadem a lavoura <br />
+            <input required type="radio" name="motivo_atrapalham" value="2" /> Arrancam telhas <br />
+            <input required type="radio" name="motivo_atrapalham" value="3" /> Invadem casas <br />
+            <input required type="radio" name="motivo_atrapalham" value="4" /> Outro motivo <br />
+            <input required type="radio" name="motivo_atrapalham" value="N/a" /> Não atrapalham <br />
+        </div>
+
+        <div class="form-group">
+            18. De 1 a 5, o quanto você diria que gosta de macacos macacos-prego?
+            <br />
+
+            <input required type="text" name="gosta_macacos" size="2" /><br />
+        </div>
+
+        <div class="form-group">
+            19. Você tinha algum animal de estimação quando era criança? <br />
+
+            <input required type="radio" name="tinha_pet_infancia" value="1" /> Sim<br />
+            <input required type="radio" name="tinha_pet_infancia" value="2" /> Não<br /> 19.1. Se sim, qual? <br />
+            <input type="text" name="qual_pet_infancia" /><br />
+        </div>
+
+        <div class="form-group">
+            20. Você tem algum animal de estimação hoje? <br />
+
+            <input required type="radio" name="tem_pet_atual" value="1" /> Sim <br />
+            <input required type="radio" name="tem_pet_atual" value="2" /> Não <br /> 20.1. Se sim, qual? <br />
+            <input type="text" name="qual_pet_atual" /><br />
+        </div>
+
+        <!-- Parte 2 - FOTOS/EMOÇÕES -->
+
+        <label>21. Selecione uma reação para cada foto a seguir</label><br />
+
+        <div class="fotos-container">
+
+            <!-- FOTO 6 -->
+            <div>
+                <img src="./imagens/foto6.jpg" width="500" /><br />
+
+                <input required type="radio" name="emocionometro06" value="1" id="foto6_emoc1">
+                <label for="foto6_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro06" value="2" id="foto6_emoc2">
+                <label for="foto6_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="55">
+                </label>
+
+                <input required type="radio" name="emocionometro06" value="3" id="foto6_emoc3">
+                <label for="foto6_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro06" value="4" id="foto6_emoc4">
+                <label for="foto6_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro06" value="5" id="foto6_emoc5">
+                <label for="foto6_emoc5" alt="emoc5" width="55">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="55">
+                </label><br>
+            </div>
+
+
+            <!-- FOTO 7 -->
+            <div>
+                <img src="./imagens/foto7.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro07" value="1" id="foto7_emoc1">
+                <label for="foto7_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro07" value="2" id="foto7_emoc2">
+                <label for="foto7_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="55">
+                </label>
+
+                <input required type="radio" name="emocionometro07" value="3" id="foto7_emoc3">
+                <label for="foto7_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro07" value="4" id="foto7_emoc4">
+                <label for="foto7_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro07" value="5" id="foto7_emoc5">
+                <label for="foto7_emoc5" alt="emoc5" width="55">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="55"><br>
+                </label>
+            </div>
+
+
+            <!-- FOTO 8 -->
+
+            <div>
+                <img src="./imagens/foto8.jpg" width="500" /><br>
+                <input required type="radio" name="emocionometro08" value="1" id="foto8_emoc1">
+                <label for="foto8_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro08" value="2" id="foto8_emoc2">
+                <label for="foto8_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro08" value="3" id="foto8_emoc3">
+                <label for="foto8_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro08" value="4" id="foto8_emoc4">
+                <label for="foto8_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro08" value="5" id="foto8_emoc5">
+                <label for="foto8_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+            <!-- FOTO 9 -->
+            <div>
+                <img src="./imagens/foto9.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro09" value="1" id="foto9_emoc1">
+                <label for="foto9_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro09" value="2" id="foto9_emoc2">
+                <label for="foto9_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="55">
+                </label>
+
+                <input required type="radio" name="emocionometro09" value="3" id="foto9_emoc3">
+                <label for="foto9_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro09" value="4" id="foto9_emoc4">
+                <label for="foto9_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro09" value="5" id="foto9_emoc5">
+                <label for="foto9_emoc5" alt="emoc5" width="55">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="55">
+                </label><br>
+            </div>
+
+
+            <!-- FOTO 10 -->
+            <div>
+                <img src="./imagens/foto10.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro10" value="1" id="foto10_emoc1">
+                <label for="foto10_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro10" value="2" id="foto10_emoc2">
+                <label for="foto10_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro10" value="3" id="foto10_emoc3">
+                <label for="foto10_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro10" value="4" id="foto9_emoc4">
+                <label for="foto10_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro10" value="5" id="foto10_emoc5">
+                <label for="foto10_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+
+            <!-- FOTO 11 -->
+            <div>
+                <img src="./imagens/foto11.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro11" value="1" id="foto11_emoc1">
+                <label for="foto11_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro11" value="2" id="foto11_emoc2">
+                <label for="foto11_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro11" value="3" id="foto11_emoc3">
+                <label for="foto11_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro11" value="4" id="foto11_emoc4">
+                <label for="foto11_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro11" value="5" id="foto11_emoc5">
+                <label for="foto11_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+            <!-- FOTO 12 -->
+
+            <div>
+                <img src="./imagens/foto12.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro12" value="1" id="foto12_emoc1">
+                <label for="foto12_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro12" value="2" id="foto12_emoc2">
+                <label for="foto12_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro12" value="3" id="foto12_emoc3">
+                <label for="foto12_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro12" value="4" id="foto12_emoc4">
+                <label for="foto12_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro12" value="5" id="foto12_emoc5">
+                <label for="foto12_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+
+            <!-- FOTO 13 -->
+            <div>
+                <img src="./imagens/foto13.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro13" value="1" id="foto13_emoc1">
+                <label for="foto13_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro13" value="2" id="foto13_emoc2">
+                <label for="foto13_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro13" value="1" id="foto13_emoc3">
+                <label for="foto13_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro13" value="4" id="foto13_emoc4">
+                <label for="foto13_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro13" value="5" id="foto13_emoc5">
+                <label for="foto13_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+
+            <!-- FOTO 14 -->
+            <div>
+                <img src="./imagens/foto14.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro14" value="1" id="foto14_emoc1">
+                <label for="foto14_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro14" value="2" id="foto14_emoc2">
+                <label for="foto14_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro14" value="3" id="foto14_emoc3">
+                <label for="foto14_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro14" value="4" id="foto14_emoc4">
+                <label for="foto14_emoc4">
+                    <img src="./imagens/emoc1.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro14" value="5" id="foto14_emoc5">
+                <label for="foto14_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 15-->
+
+            <div>
+                <img src="./imagens/foto15.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro15" value="1" id="foto15_emoc1">
+                <label for="foto15_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro15" value="2" id="foto15_emoc2">
+                <label for="foto15_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro15" value="3" id="foto15_emoc3">
+                <label for="foto15_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro15" value="4" id="foto15_emoc4">
+                <label for="foto15_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro15" value="5" id="foto15_emoc5">
+                <label for="foto15_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+            <!-- FOTO 16 -->
+
+            <div>
+                <img src="./imagens/foto16.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro16" value="1" id="foto16_emoc1">
+                <label for="foto16_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro16" value="2" id="foto16_emoc2">
+                <label for="foto16_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro16" value="3" id="foto16_emoc3">
+                <label for="foto16_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro16" value="4" id="foto16_emoc4">
+                <label for="foto16_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro16" value="5" id="foto16_emoc5">
+                <label for="foto16_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 17-->
+
+            <div>
+                <img src="./imagens/foto17.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro17" value="1" id="foto17_emoc1">
+                <label for="foto17_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro17" value="2" id="foto17_emoc2">
+                <label for="foto17_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro17" value="3" id="foto17_emoc3">
+                <label for="foto17_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro17" value="4" id="foto17_emoc4">
+                <label for="foto17_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro17" value="5" id="foto17_emoc5">
+                <label for="foto17_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+
+            <!-- FOTO 18 -->
+            <div>
+                <img src="./imagens/foto18.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro18" value="1" id="foto18_emoc1">
+                <label for="foto18_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro18" value="2" id="foto18_emoc2">
+                <label for="foto18_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro18" value="3" id="foto18_emoc3">
+                <label for="foto18_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro18" value="4" id="foto18_emoc4">
+                <label for="foto18_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro18" value="5" id="foto18_emoc5">
+                <label for="foto18_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 19 -->
+
+            <div>
+                <img src="./imagens/foto19.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro19" value="1" id="foto19_emoc1">
+                <label for="foto19_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro19" value="2" id="foto19_emoc2">
+                <label for="foto19_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro19" value="3" id="foto19_emoc3">
+                <label for="foto19_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro19" value="4" id="foto19_emoc4">
+                <label for="foto19_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro19" value="5" id="foto19_emoc5">
+                <label for="foto19_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 20 -->
+
+            <div>
+                <img src="./imagens/foto20.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro20" value="1" id="foto20_emoc1">
+                <label for="foto20_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro20" value="2" id="foto20_emoc2">
+                <label for="foto20_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro20" value="3" id="foto20_emoc3">
+                <label for="foto20_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro20" value="4" id="foto20_emoc4">
+                <label for="foto20_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro20" value="5" id="foto20_emoc5">
+                <label for="foto20_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 21 -->
+            <div>
+                <img src="./imagens/foto21.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro21" value="1" id="foto21_emoc1">
+                <label for="foto21_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro21" value="2" id="foto21_emoc2">
+                <label for="foto21_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro21" value="3" id="foto21_emoc3">
+                <label for="foto21_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro21" value="4" id="foto21_emoc4">
+                <label for="foto21_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro21" value="5" id="foto21_emoc5">
+                <label for="foto21_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 22 -->
+
+            <div>
+                <img src="./imagens/foto22.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro22" value="1" id="foto22_emoc1">
+                <label for="foto22_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro22" value="2" id="foto22_emoc2">
+                <label for="foto22_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro22" value="3" id="foto22_emoc3">
+                <label for="foto22_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro22" value="4" id="foto22_emoc4">
+                <label for="foto22_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro22" value="5" id="foto22_emoc5">
+                <label for="foto22_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 23 -->
+
+            <div>
+                <img src="./imagens/foto23.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro23" value="1" id="foto23_emoc1">
+                <label for="foto23_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro23" value="2" id="foto23_emoc2">
+                <label for="foto23_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro23" value="3" id="foto23_emoc3">
+                <label for="foto23_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro23" value="4" id="foto23_emoc4">
+                <label for="foto23_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro23" value="5" id="foto23_emoc5">
+                <label for="foto23_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 24 -->
+
+            <div>
+                <img src="./imagens/foto24.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro24" value="1" id="foto24_emoc1">
+                <label for="foto24_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro24" value="2" id="foto24_emoc2">
+                <label for="foto24_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro24" value="3" id="foto24_emoc3">
+                <label for="foto24_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro24" value="4" id="foto24_emoc4">
+                <label for="foto24_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro24" value="5" id="foto24_emoc5">
+                <label for="foto24_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 25 -->
+
+            <div>
+                <img src="./imagens/foto25.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro25" value="1" id="foto25_emoc1">
+                <label for="foto25_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro25" value="2" id="foto25_emoc2">
+                <label for="foto25_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro25" value="3" id="foto25_emoc3">
+                <label for="foto25_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro25" value="4" id="foto25_emoc4">
+                <label for="foto25_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro25" value="5" id="foto25_emoc5">
+                <label for="foto25_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+            <!-- FOTO 26 -->
+            <div>
+                <img src="./imagens/foto26.jpg" width="500" /><br>
+
+                <input required type="radio" name="emocionometro26" value="1" id="foto26_emoc1">
+                <label for="foto26_emoc1">
+                    <img src="./imagens/emoc1.png" alt="emoc1" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro26" value="2" id="foto26_emoc2">
+                <label for="foto26_emoc2">
+                    <img src="./imagens/emoc2.png" alt="emoc2" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro26" value="3" id="foto26_emoc3">
+                <label for="foto26_emoc3">
+                    <img src="./imagens/emoc3.png" alt="emoc3" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro26" value="4" id="foto26_emoc4">
+                <label for="foto26_emoc4">
+                    <img src="./imagens/emoc4.png" alt="emoc4" width="60">
+                </label>
+
+                <input required type="radio" name="emocionometro26" value="5" id="foto26_emoc5">
+                <label for="foto26_emoc5">
+                    <img src="./imagens/emoc5.png" alt="emoc5" width="60">
+                </label><br>
+            </div>
+        </div>
+
+
+
+        <div class="concordancia">
+            22. Marque o quanto você concorda ou discorda com cada uma das frases:
+            <br />
+            <div class="form-group">
+
+                1) Lugar de animal selvagem é na natureza.<br />
+                <input type="range" min="1" max="5" value="3" name="frases1">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                2) Pessoas podem vender e comprar animais selvagens. <br />
+                <input type="range" min="1" max="5" value="3" name="frases2">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                3) Animais selvagens não podem ser criados como cachorro ou gato. <br />
+                <input type="range" min="1" max="5" value="3" name="frases3">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                4) Animais selvagens gostam da gente e não sofrem na nossa casa. <br />
+                <input type="range" min="1" max="5" value="3" name="frases4">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                5) Não vejo nada de errado no uso de animais em experimentos científicos (e.g. medicamentos ou para estudo). <br />
+                <input type="range" min="1" max="5" value="3" name="frases5">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                6) Pessoas não tem o direito de usar animais.<br />
+                <input type="range" min="1" max="5" value="3" name="frases6">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                7) Eu não me incomodo em ver animais presos em gaiolas pois eles são selvagens e não podem ficar soltos.
+                <br />
+                <input type="range" min="1" max="5" value="3" name="frases7">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                8) Eu me incomodo em ver animais em Zoológicos ou Circos. <br />
+                <input type="range" min="1" max="5" value="3" name="frases8">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                9) É errado caçar animais somente por esporte. <br />
+                <input type="range" min="1" max="5" value="3" name="frases9">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+            <div class="form-group">
+                10) Animais selvagens não sentem. <br />
+                <input type="range" min="1" max="5" value="3" name="frases10">
+                <span>Nem concordo nem discordo</span>
+            </div>
+
+        </div>
+
+        <div class="form-group row parte-natureza">
+            <div class="col-12">23. O quanto você se sente parte da natureza?</div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+                <input required type="radio" name="INS_scale" value="1" id="ins_1" />
+                <label for="ins_1">
+                    <img src="./imagens/ins1.jpg" alt="INS 1" width="250" />
+                </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+
+                <input required type="radio" name="INS_scale" value="2" id="ins_2" />
+                <label for="ins_2">
+                    <img src="./imagens/ins2.jpg" alt="INS 2" width="250" />
+                </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+
+                <input required type="radio" name="INS_scale" value="3" id="ins_3" />
+                <label for="ins_3">
+                    <img src="./imagens/ins3.jpg" alt="INS 3" width="250" />
+                </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+
+                <input required type="radio" name="INS_scale" value="4" id="ins_4" />
+                <label for="ins_4">
+                    <img src="./imagens/ins4.jpg" alt="INS 4" width="250" />
+                </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+                <input required type="radio" name="INS_scale" value="5" id="ins_5" />
+                <label for="ins_5">
+                    <img src="./imagens/ins5.jpg" alt="INS 5" width="250" />
+                </label>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+
+                <input required type="radio" name="INS_scale" value="6" id="ins_6" />
+                <label for="ins_6">
+                    <img src="./imagens/ins6.jpg" alt="INS 6" width="250" />
+                </label>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 centered-flex-container">
+
+                <input required type="radio" name="INS_scale" value="7" id="ins_7" />
+                <label for="ins_7">
+                    <img src="./imagens/ins7.jpg" alt="INS 7" width="250" />
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group" id="emocoes">
+            24. Que animais da imagem você acha que sentem as seguintes emoções:
+            <br /> 1) Medo: <br />
+            <div class="row emocao">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_passaro">
+                        <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
+                    </label>
+                    <input required type="radio" name="medo_passaro" value="1" id="medo_pass_sim">
+                    <label for="medo_pass_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_passaro" value="2" id="medo_pass_nao">
+                    <label for="medo_pass_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_galo">
+                        <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
+                    </label>
+                    <input required type="radio" name="medo_galo" value="1" id="medo_galo_sim">
+                    <label for="medo_galo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_galo" value="2" id="medo_galo_nao">
+                    <label for="medo_galo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_macaco">
+                        <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
+                    </label>
+                    <input required type="radio" name="medo_macaco" value="1" id="medo_mac_sim">
+                    <label for="medo_mac_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_macaco" value="2" id="medo_mac_nao">
+                    <label for="medo_mac_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_lagarto">
+                        <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
+                    </label>
+                    <input required type="radio" name="medo_lagarto" value="1" id="medo_lagar_sim">
+                    <label for="medo_lagar_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_lagarto" value="2" id="medo_lagar_nao">
+                    <label for="medo_lagar_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_vaca">
+                        <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
+                    </label>
+                    <input required type="radio" name="medo_vaca" value="1" id="medo_vaca_sim">
+                    <label for="medo_vaca_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_vaca" value="2" id="medo_vaca_nao">
+                    <label for="medo_vaca_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_papagaio">
+                        <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
+                    </label>
+                    <input required type="radio" name="medo_papagaio" value="1" id="medo_pap_sim">
+                    <label for="medo_pap_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_papagaio" value="2" id="medo_pap_nao">
+                    <label for="medo_pap_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_cobra">
+                        <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
+                    </label>
+                    <input required type="radio" name="medo_cobra" value="1" id="medo_cobra_sim">
+                    <label for="medo_cobra_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_cobra" value="2" id="medo_cobra_nao">
+                    <label for="medo_cobra_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_gato">
+                        <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
+                    </label>
+                    <input required type="radio" name="medo_gato" value="1" id="medo_gato_sim">
+                    <label for="medo_gato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_gato" value="2" id="medo_gato_nao">
+                    <label for="medo_gato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_tartaruga">
+                        <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
+                    </label>
+                    <input required type="radio" name="medo_tartaruga" value="1" id="medo_tart_sim">
+                    <label for="medo_tart_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_tartaruga" value="2" id="medo_tart_nao">
+                    <label for="medo_tart_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_cachorro">
+                        <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
+                    </label>
+                    <input required type="radio" name="medo_cachorro" value="1" id="medo_cach_sim">
+                    <label for="medo_cach_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_cachorro" value="2" id="medo_cach_nao">
+                    <label for="medo_cach_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_peixe">
+                        <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
+                    </label>
+                    <input required type="radio" name="medo_peixe" value="1" id="medo_peixe_sim">
+                    <label for="medo_peixe_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_peixe" value="2" id="medo_peixe_nao">
+                    <label for="medo_peixe_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_sapo">
+                        <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
+                    </label>
+                    <input required type="radio" name="medo_sapo" value="1" id="medo_sapo_sim">
+                    <label for="medo_sapo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_sapo" value="2" id="medo_sapo_nao">
+                    <label for="medo_sapo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_rato">
+                        <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
+                    </label>
+                    <input required type="radio" name="medo_rato" value="1" id="medo_rato_sim">
+                    <label for="medo_rato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_rato" value="2" id="medo_rato_nao">
+                    <label for="medo_rato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_porco">
+                        <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
+                    </label>
+                    <input required type="radio" name="medo_porco" value="1" id="medo_porco_sim">
+                    <label for="medo_porco_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_porco" value="2" id="medo_porco_nao">
+                    <label for="medo_porco_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_humano">
+                        <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
+                    </label>
+                    <input required type="radio" name="medo_humano" value="1" id="medo_human_sim">
+                    <label for="medo_human_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_humano" value="2" id="medo_human_nao">
+                    <label for="medo_human_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_medo_borboleta">
+                        <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
+                    </label>
+                    <input required type="radio" name="medo_borboleta" value="1" id="medo_borb_sim">
+                    <label for="medo_borb_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="medosim" width="80">
+                    </label>
+                    <input required type="radio" name="medo_borboleta" value="2" id="medo_borb_nao">
+                    <label for="medo_borb_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="medonao" width="80">
+                    </label>
+                </div>
+            </div>
+
+            2) Felicidade: <br>
+
+            <div class="row emocao">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_passaro">
+                        <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
+                    </label>
+                    <input required type="radio" name="felicidade_passaro" value="1" id="felicidade_pass_sim">
+                    <label for="felicidade_pass_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_passaro" value="2" id="felicidade_pass_nao">
+                    <label for="felicidade_pass_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_galo">
+                        <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
+                    </label>
+                    <input required type="radio" name="felicidade_galo" value="1" id="felicidade_galo_sim">
+                    <label for="felicidade_galo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_galo" value="2" id="felicidade_galo_nao">
+                    <label for="felicidade_galo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_macaco">
+                        <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
+                    </label>
+
+                    <input required type="radio" name="felicidade_macaco" value="1" id="felicidade_mac_sim">
+                    <label for="felicidade_mac_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_macaco" value="2" id="felicidade_mac_nao">
+                    <label for="felicidade_mac_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_lagarto">
+                        <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
+                    </label>
+                    <input required type="radio" name="felicidade_lagarto" value="1" id="felicidade_lagar_sim">
+                    <label for="felicidade_lagar_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_lagarto" value="2" id="felicidade_lagar_nao">
+                    <label for="felicidade_lagar_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_vaca">
+                        <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
+                    </label>
+                    <input required type="radio" name="felicidade_vaca" value="1" id="felicidade_vaca_sim">
+                    <label for="felicidade_vaca_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_vaca" value="2" id="felicidade_vaca_nao">
+                    <label for="felicidade_vaca_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_papagaio">
+                        <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
+                    </label>
+                    <input required type="radio" name="felicidade_papagaio" value="1" id="felicidade_pap_sim">
+                    <label for="felicidade_pap_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_papagaio" value="2" id="felicidade_pap_nao">
+                    <label for="felicidade_pap_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_cobra">
+                        <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
+                    </label>
+                    <input required type="radio" name="felicidade_cobra" value="1" id="felicidade_cobra_sim">
+                    <label for="felicidade_cobra_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_cobra" value="2" id="felicidade_cobra_nao">
+                    <label for="felicidade_cobra_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_gato">
+                        <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
+                    </label>
+                    <input required type="radio" name="felicidade_gato" value="1" id="felicidade_gato_sim">
+                    <label for="felicidade_gato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_gato" value="2" id="felicidade_gato_nao">
+                    <label for="felicidade_gato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_tartaruga">
+                        <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
+                    </label>
+                    <input required type="radio" name="felicidade_tartaruga" value="1" id="felicidade_tart_sim">
+                    <label for="felicidade_tart_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_tartaruga" value="2" id="felicidade_tart_nao">
+                    <label for="felicidade_tart_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_cachorro">
+                        <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
+                        <input required type="radio" name="felicidade_cachorro" value="1" id="felicidade_cach_sim">
+                        <label for="felicidade_cach_sim">
+                            <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                        </label>
+                    <input required type="radio" name="felicidade_cachorro" value="2" id="felicidade_cach_nao">
+                    <label for="felicidade_cach_nao">
+                            <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                        </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_peixe">
+                        <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
+                    </label>
+                    <input required type="radio" name="felicidade_peixe" value="1" id="felicidade_peixe_sim">
+                    <label for="felicidade_peixe_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_peixe" value="2" id="felicidade_peixe_nao">
+                    <label for="felicidade_peixe_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_sapo">
+                        <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
+                    </label>
+                    <input required type="radio" name="felicidade_sapo" value="1" id="felicidade_sapo_sim">
+                    <label for="felicidade_sapo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_sapo" value="2" id="felicidade_sapo_nao">
+                    <label for="felicidade_sapo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_rato">
+                        <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
+                    </label>
+                    <input required type="radio" name="felicidade_rato" value="1" id="felicidade_rato_sim">
+                    <label for="felicidade_rato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_rato" value="2" id="felicidade_rato_nao">
+                    <label for="felicidade_rato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_porco">
+                        <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
+                    </label>
+                    <input required type="radio" name="felicidade_porco" value="1" id="felicidade_porco_sim">
+                    <label for="felicidade_porco_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_porco" value="2" id="felicidade_porco_nao">
+                    <label for="felicidade_porco_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_humano">
+                        <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
+                    </label>
+                    <input required type="radio" name="felicidade_humano" value="1" id="felicidade_humano_sim">
+                    <label for="felicidade_humano_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_humano" value="2" id="felicidade_humano_nao">
+                    <label for="felicidade_humano_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_felicidade_borboleta">
+                        <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
+                    </label>
+                    <input required type="radio" name="felicidade_borboleta" value="1" id="felicidade_borb_sim">
+                    <label for="felicidade_borb_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="felicidadesim" width="80">
+                    </label>
+                    <input required type="radio" name="felicidade_borboleta" value="2" id="felicidade_borb_nao">
+                    <label for="felicidade_borb_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
+                    </label>
+                </div>
+            </div>
+
+            3) Amor: <br>
+
+            <div class="row emocao">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_passaro">
+                        <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
+                    </label>
+                    <input required type="radio" name="amor_passaro" value="1" id="amor_pass_sim">
+                    <label for="amor_pass_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_passaro" value="2" id="amor_pass_nao">
+                    <label for="amor_pass_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_galo">
+                        <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
+                    </label>
+                    <input required type="radio" name="amor_galo" value="1" id="amor_galo_sim">
+                    <label for="amor_galo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_galo" value="2" id="amor_galo_nao">
+                    <label for="amor_galo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_macaco">
+                        <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
+                    </label>
+                    <input required type="radio" name="amor_macaco" value="1" id="amor_mac_sim">
+                    <label for="amor_mac_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_macaco" value="2" id="amor_mac_nao">
+                    <label for="amor_mac_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_lagarto">
+                        <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
+                    </label>
+                    <input required type="radio" name="amor_lagarto" value="1" id="amor_lagar_sim">
+                    <label for="amor_lagar_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_lagarto" value="2" id="amor_lagar_nao">
+                    <label for="amor_lagar_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_vaca">
+                        <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
+                    </label>
+                    <input required type="radio" name="amor_vaca" value="1" id="amor_vaca_sim">
+                    <label for="amor_vaca_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_vaca" value="2" id="amor_vaca_nao">
+                    <label for="amor_vaca_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_papagaio">
+                        <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
+                    </label>
+                    <input required type="radio" name="amor_papagaio" value="1" id="amor_pap_sim">
+                    <label for="amor_pap_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_papagaio" value="2" id="amor_pap_nao">
+                    <label for="amor_pap_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_cobra">
+                        <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
+                    </label>
+                    <input required type="radio" name="amor_cobra" value="1" id="amor_cobra_sim">
+                    <label for="amor_cobra_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_cobra" value="2" id="amor_cobra_nao">
+                    <label for="amor_cobra_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_gato">
+                        <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
+                    </label>
+                    <input required type="radio" name="amor_gato" value="1" id="amor_gato_sim">
+                    <label for="amor_gato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_gato" value="2" id="amor_gato_nao">
+                    <label for="amor_gato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_tartaruga">
+                        <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
+                    </label>
+                    <input required type="radio" name="amor_tartaruga" value="1" id="amor_tart_sim">
+                    <label for="amor_tart_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_tartaruga" value="2" id="amor_tart_nao">
+                    <label for="amor_tart_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_cachorro">
+                        <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
+                    </label>
+                    <input required type="radio" name="amor_cachorro" value="1" id="amor_cach_sim">
+                    <label for="amor_cach_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_cachorro" value="2" id="amor_cach_nao">
+                    <label for="amor_cach_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_peixe">
+                        <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
+                    </label>
+                    <input required type="radio" name="amor_peixe" value="1" id="amor_peixe_sim">
+                    <label for="amor_peixe_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_peixe" value="2" id="amor_peixe_nao">
+                    <label for="amor_peixe_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_sapo">
+                        <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
+                    </label>
+                    <input required type="radio" name="amor_sapo" value="1" id="amor_sapo_sim">
+                    <label for="amor_sapo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_sapo" value="2" id="amor_sapo_nao">
+                    <label for="amor_sapo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_rato">
+                        <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
+                    </label>
+                    <input required type="radio" name="amor_rato" value="1" id="amor_rato_sim">
+                    <label for="amor_rato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_rato" value="2" id="amor_rato_nao">
+                    <label for="amor_rato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_porco">
+                        <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
+                    </label>
+                    <input required type="radio" name="amor_porco" value="1" id="amor_porco_sim">
+                    <label for="amor_porco_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_porco" value="2" id="amor_porco_nao">
+                    <label for="amor_porco_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_humano">
+                        <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
+                    </label>
+                    <input required type="radio" name="amor_humano" value="1" id="amor_humano_sim">
+                    <label for="amor_humano_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_humano" value="2" id="amor_humano_nao">
+                    <label for="amor_humano_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_amor_borboleta">
+                        <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
+                    </label>
+                    <input required type="radio" name="amor_borboleta" value="1" id="amor_borb_sim">
+                    <label for="amor_borb_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="amorsim" width="80">
+                    </label>
+                    <input required type="radio" name="amor_borboleta" value="2" id="amor_borb_nao">
+                    <label for="amor_borb_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="amornao" width="80">
+                    </label>
+
+                </div>
+            </div>
+
+            4) Tristeza: <br>
+
+            <div class="row emocao">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_passaro">
+                        <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
+                    </label>
+                    <input required type="radio" name="tristeza_passaro" value="1" id="tristeza_pass_sim">
+                    <label for="tristeza_pass_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_passaro" value="2" id="tristeza_pass_nao">
+                    <label for="tristeza_pass_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_galo">
+                        <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
+                    </label>
+                    <input required type="radio" name="tristeza_galo" value="1" id="tristeza_galo_sim">
+                    <label for="tristeza_galo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_galo" value="2" id="tristeza_galo_nao">
+                    <label for="tristeza_galo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_">
+                        <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
+                    </label>
+                    <input required type="radio" name="tristeza_macaco" value="1" id="tristeza_mac_sim">
+                    <label for="tristeza_mac_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_macaco" value="2" id="tristeza_mac_nao">
+                    <label for="tristeza_mac_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_lagarto">
+                        <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
+                    </label>
+                    <input required type="radio" name="tristeza_lagarto" value="1" id="tristeza_lagar_sim">
+                    <label for="tristeza_lagar_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_lagarto" value="2" id="tristeza_lagar_nao">
+                    <label for="tristeza_lagar_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_vaca">
+                        <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
+                    </label>
+                    <input required type="radio" name="tristeza_vaca" value="1" id="tristeza_vaca_sim">
+                    <label for="tristeza_vaca_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_vaca" value="2" id="tristeza_vaca_nao">
+                    <label for="tristeza_vaca_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_papagaio">
+                        <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
+                    </label>
+                    <input required type="radio" name="tristeza_papagaio" value="1" id="tristeza_pap_sim">
+                    <label for="tristeza_pap_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_papagaio" value="2" id="tristeza_pap_nao">
+                    <label for="tristeza_pap_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_cobra">
+                        <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
+                    </label>
+                    <input required type="radio" name="tristeza_cobra" value="1" id="tristeza_cobra_sim">
+                    <label for="tristeza_cobra_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_cobra" value="2" id="tristeza_cobra_nao">
+                    <label for="tristeza_cobra_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_gato">
+                        <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
+                    </label>
+                    <input required type="radio" name="tristeza_gato" value="1" id="tristeza_gato_sim">
+                    <label for="tristeza_gato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_gato" value="2" id="tristeza_gato_nao">
+                    <label for="tristeza_gato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_tartaruga">
+                        <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
+                    </label>
+                    <input required type="radio" name="tristeza_tartaruga" value="1" id="tristeza_tart_sim">
+                    <label for="tristeza_tart_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_tartaruga" value="2" id="tristeza_tart_nao">
+                    <label for="tristeza_tart_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_cachorro">
+                        <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
+                    </label>
+                    <input required type="radio" name="tristeza_cachorro" value="1" id="tristeza_cach_sim">
+                    <label for="tristeza_cach_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_cachorro" value="2" id="tristeza_cach_nao">
+                    <label for="tristeza_cach_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_peixe">
+                        <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
+                    </label>
+                    <input required type="radio" name="tristeza_peixe" value="1" id="tristeza_peixe_sim">
+                    <label for="tristeza_peixe_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_peixe" value="2" id="tristeza_peixe_nao">
+                    <label for="tristeza_peixe_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_sapo">
+                        <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
+                    </label>
+                    <input required type="radio" name="tristeza_sapo" value="1" id="tristeza_sapo_sim">
+                    <label for="tristeza_sapo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_sapo" value="2" id="tristeza_sapo_nao">
+                    <label for="tristeza_sapo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_rato">
+                        <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
+                    </label>
+                    <input required type="radio" name="tristeza_rato" value="1" id="tristeza_rato_sim">
+                    <label for="tristeza_rato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_rato" value="2" id="tristeza_rato_nao">
+                    <label for="tristeza_rato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_porco">
+                        <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
+                    </label>
+                    <input required type="radio" name="tristeza_porco" value="1" id="tristeza_porco_sim">
+                    <label for="tristeza_porco_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_porco" value="2" id="tristeza_porco_nao">
+                    <label for="tristeza_porco_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_humano">
+                        <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
+                    </label>
+                    <input required type="radio" name="tristeza_humano" value="1" id="tristeza_humano_sim">
+                    <label for="tristeza_humano_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_humano" value="2" id="tristeza_humano_nao">
+                    <label for="tristeza_humano_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_tristeza_borboleta">
+                        <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
+                    </label>
+                    <input required type="radio" name="tristeza_borboleta" value="1" id="tristeza_borb_sim">
+                    <label for="tristeza_borb_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="tristezasim" width="80">
+                    </label>
+                    <input required type="radio" name="tristeza_borboleta" value="2" id="tristeza_borb_nao">
+                    <label for="tristeza_borb_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="tristezanao" width="80">
+                    </label>
+
+                </div>
+            </div>
+
+            5) Raiva: <br />
+
+            <div class="row emocao">
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_passaro">
+                        <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
+                    </label>
+                    <input required type="radio" name="raiva_passaro" value="1" id="raiva_pass_sim">
+                    <label for="raiva_pass_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_passaro" value="2" id="raiva_pass_nao">
+                    <label for="raiva_pass_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_galo">
+                        <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
+                    </label>
+                    <input required type="radio" name="raiva_galo" value="1" id="raiva_galo_sim">
+                    <label for="raiva_galo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_galo" value="2" id="raiva_galo_nao">
+                    <label for="raiva_galo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_macaco">
+                        <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
+                    </label>
+                    <input required type="radio" name="raiva_macaco" value="1" id="raiva_mac_sim">
+                    <label for="raiva_mac_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_macaco" value="2" id="raiva_mac_nao">
+                    <label for="raiva_mac_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_lagarto">
+                        <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
+                    </label>
+                    <input required type="radio" name="raiva_lagarto" value="1" id="raiva_lagar_sim">
+                    <label for="raiva_lagar_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_lagarto" value="2" id="raiva_lagar_nao">
+                    <label for="raiva_lagar_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_vaca">
+                        <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
+                    </label>
+                    <input required type="radio" name="raiva_vaca" value="1" id="raiva_vaca_sim">
+                    <label for="raiva_vaca_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_vaca" value="2" id="raiva_vaca_nao">
+                    <label for="raiva_vaca_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_papagaio">
+                        <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
+                    </label>
+                    <input required type="radio" name="raiva_papagaio" value="1" id="raiva_pap_sim">
+                    <label for="raiva_pap_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_papagaio" value="2" id="raiva_pap_nao">
+                    <label for="raiva_pap_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_cobra">
+                        <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
+                    </label>
+                    <input required type="radio" name="raiva_cobra" value="1" id="raiva_cobra_sim">
+                    <label for="raiva_cobra_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_cobra" value="2" id="raiva_cobra_nao">
+                    <label for="raiva_cobra_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_gato">
+                        <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
+                    </label>
+                    <input required type="radio" name="raiva_gato" value="1" id="raiva_gato_sim">
+                    <label for="raiva_gato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_gato" value="2" id="raiva_gato_nao">
+                    <label for="raiva_gato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_tartaruga">
+                        <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
+                    </label>
+                    <input required type="radio" name="raiva_tartaruga" value="1" id="raiva_tart_sim">
+                    <label for="raiva_tart_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_tartaruga" value="2" id="raiva_tart_nao">
+                    <label for="raiva_tart_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_cachorro">
+                        <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
+                    </label>
+                    <input required type="radio" name="raiva_cachorro" value="1" id="raiva_cach_sim">
+                    <label for="raiva_cach_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_cachorro" value="2" id="raiva_cach_nao">
+                    <label for="raiva_cach_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_peixe">
+                        <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
+                    </label>
+                    <input required type="radio" name="raiva_peixe" value="1" id="raiva_peixe_sim">
+                    <label for="raiva_peixe_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_peixe" value="2" id="raiva_peixe_nao">
+                    <label for="raiva_peixe_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_sapo">
+                        <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
+                    </label>
+                    <input required type="radio" name="raiva_sapo" value="1" id="raiva_sapo_sim">
+                    <label for="raiva_sapo_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_sapo" value="2" id="raiva_sapo_nao">
+                    <label for="raiva_sapo_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_rato">
+                        <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
+                    </label>
+                    <input required type="radio" name="raiva_rato" value="1" id="raiva_rato_sim">
+                    <label for="raiva_rato_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_rato" value="2" id="raiva_rato_nao">
+                    <label for="raiva_rato_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_porco">
+                        <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
+                    </label>
+                    <input required type="radio" name="raiva_porco" value="1" id="raiva_porco_sim">
+                    <label for="raiva_porco_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_porco" value="2" id="raiva_porco_nao">
+                    <label for="raiva_porco_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_humano">
+                        <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
+                    </label>
+                    <input required type="radio" name="raiva_humano" value="1" id="raiva_humano_sim">
+                    <label for="raiva_humano_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_humano" value="2" id="raiva_humano_nao">
+                    <label for="raiva_humano_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                    <label for="emocoes_raiva_borboleta">
+                        <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
+                    </label>
+                    <input required type="radio" name="raiva_borboleta" value="1" id="raiva_borb_sim">
+                    <label for="raiva_borb_sim">
+                        <img class="image-fluid" src="./imagens/thumbs-upp.png" alt="raivasim" width="80">
+                    </label>
+                    <input required type="radio" name="raiva_borboleta" value="2" id="raiva_borb_nao">
+                    <label for="raiva_borb_nao">
+                        <img class="image-fluid" src="./imagens/thumbs-down.png" alt="raivanao" width="80">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="centered-flex-container">
+            <button class="btn btn-outline-primary" type="submit" value="Enviar">
+                Armazenar dados
+            </button>
+        </div>
+    </form>
+
+    <button class="btn btn-danger" onclick="__teste()">TESTAR ORDEM DAS COLUNAS</button>
+
+    <div class="row">
+        <div class="col-12">
+            <p class="resultado-ordem"></p>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+
+</html>

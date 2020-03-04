@@ -1,7 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
 header {
     margin-bottom: 40px;
-    font-size: 25px;
-    color:darkgreen
+    font-size: 35px;
+    color: darkgreen
+}
+
+header h3 {
+    margin-bottom: 20px;
+}
+
+header h3:last-child {
+    margin-bottom: 80px;
 }
 
 form {
@@ -20,13 +35,14 @@ h3 {
     margin-right: auto; */
 }
 
-.carousel-inner img {
-    /* width: 90%;
-    margin-left: auto;
-    margin-right: auto; */
+.fotos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.carousel-control-next span, .carousel-control-prev span {
+.carousel-control-next span,
+.carousel-control-prev span {
     background-color: black !important;
     opacity: 1;
     transform: scale(1.5);
@@ -55,6 +71,7 @@ h3 {
     width: 250px;
     height: 250px;
 }
+
 #emocoes .col-4 label {
     text-align: center;
 }
@@ -88,7 +105,10 @@ table.table tbody tr td {
 table.table {
     border-bottom: 1px solid black;
     margin-bottom: 200px;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     position: absolute;
 }
 
@@ -104,4 +124,26 @@ table.table {
 
 .carousel-inner .slidecontainer input[type="range"] {
     width: 318px;
+}
+
+#emocoes input+label {
+    transition: transform 0.1s ease-in-out;
+}
+
+#emocoes input:not(:checked)+label,
+.fotos-container input:not(:checked)+label {
+    transform: scale(0.85);
+}
+
+#emocoes input:checked+label,
+.fotos-container input:checked+label {
+    transform: scale(1.1);
+}
+
+.parte-natureza input:not(:checked)+label {
+    transform: scale(0.65);
+}
+
+.parte-natureza input:checked+label {
+    transform: scale(0.9);
 }

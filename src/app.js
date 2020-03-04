@@ -1,29 +1,3 @@
-let ordemOriginal = {};
-
-jQuery.fn.shuffleChildren = function () {
-    let p = this[0];
-    for (let i = p.children.length; i >= 0; i--) {
-        p.appendChild(p.children[Math.random() * i | 0]);
-        ordemOriginal[i] = i;
-    }
-
-    delete (ordemOriginal[p.children.length + 1]);
-
-};
-
-jQuery.fn.recuperarOrdemOriginal = function () {
-    let p = this[0];
-    $(p).children().hide();
-    for (let i = 0; i < p.children.length; i++) {
-        p.appendChild(p.children[ordemOriginal[i]]);
-    }
-    $(p).children().show();
-}
-
-// function alternarVisibilidadeTabela() {
-//     $('table').slideToggle();
-// }
-
 function convertFormToCSV(formData) {
     let data = '';
 
@@ -45,12 +19,48 @@ function convertFormToCSV(formData) {
     localStorage.setItem('sujeito_' + ++i, data);
 }
 
+function getFormData() {
+    const dadosFotos = $('.fotos-container :input').serializeArray().sort((a, b) => { return (a.name > b.name) ? 1 : -1 });
+    const outrosDados = $("form").serializeArray();
+
+    let dadosFormularioObject = {
+        ...outrosDados,
+        ...dadosFotos
+    };
+
+    const stringified1 = JSON.stringify(dadosFormularioObject);
+
+    let dadosFormulario = [];
+
+    for (let item in dadosFormularioObject) {
+        dadosFormulario.push(dadosFormularioObject[item]);
+    }
+
+    const stringified2 = JSON.stringify(dadosFormulario);
+    if (stringified1 != stringified2) {
+        console.log(dadosFormulario);
+        console.log(dadosFormularioObject);
+    }
+
+    return dadosFormulario;
+}
+
 function readFormData(event) {
     event.preventDefault();
-    $('.carousel-inner').recuperarOrdemOriginal();
-    let dadosFormulario = $("form").serializeArray();
 
-    convertFormToCSV(dadosFormulario);
+    try {
+        const dadosFormulario = getFormData();
+
+        convertFormToCSV(dadosFormulario);
+
+        alert('Registro armazenado com sucesso...');
+
+        event.target.submit();
+    } catch (e) {
+        alert('Houve um erro, por favor tente novamente. Se persistir, tente reiniciar.');
+    }
+
+
 }
 
 function fetchDataFromLocalStorage() {
@@ -97,18 +107,18 @@ function popularTabela() {
     });
 
     $('table.table')[0].innerHTML += `            
-            <tr>
-                <th colspan="3">
-                    <b>TOTAL</b>
-                </th>
-                <td>
-                    ${lines.length - 1}
-                </td>
-            </tr>
+        <tr>
+        <th colspan="3">
+        <b>TOTAL</b>
+        </th>
+        <td>
+        ${lines.length - 1}
+        </td>
+        </tr>
         `;
 }
 
-$('#emocoes .emocao select').on('touch click change', function (event) {
+$('#emocoes .emocao select').on('touch click change', function(event) {
     if (event.target.value == -1) {
         $(event.target).addClass('is-invalid');
         $(event.target).removeClass('is-valid');
@@ -127,8 +137,40 @@ const respostasFrases = {
 };
 
 
+function aleatorizarFotos() {
+
+    $('.fotos-container').children().each((index, element) => {
+        element.style.order = Math.floor(Math.random() * 10000);
+    });
+
+}
+
 $(() => {
-    $('.concordancia input').on('input change', function (event) {
+    $('.concordancia input').on('input change', function(event) {
         $(event.target).next('span').text(respostasFrases[event.target.value]);
     });
-})
+
+    aleatorizarFotos();
+
+});
+
+
+
+function __teste() {
+    const p = $('p.resultado-ordem')[0];
+
+    $('input').click();
+
+    p.innerText = '';
+
+    const dadosFormulario = getFormData();
+
+    console.log(dadosFormulario);
+
+    dadosFormulario.forEach((obj) => {
+        p.innerText += obj.name;
+        p.innerText += ' - ';
+    });
+
+
+}
