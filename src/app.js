@@ -18,7 +18,7 @@ function convertFormToCSV(formData) {
 }
 
 function getFormData() {
-    const dadosFotos = $('.fotos-container :input').serializeArray().sort((a, b) => { return (a.name > b.name) ? 1 : -1 });
+    const dadosFotos = $('.fotos-container :input').serializeArray();
     const outrosDados = $("form").serializeArray();
 
     let dadosFormularioObject = {
@@ -26,18 +26,10 @@ function getFormData() {
         ...dadosFotos
     };
 
-    const stringified1 = JSON.stringify(dadosFormularioObject);
-
     let dadosFormulario = [];
 
     for (let item in dadosFormularioObject) {
         dadosFormulario.push(dadosFormularioObject[item]);
-    }
-
-    const stringified2 = JSON.stringify(dadosFormulario);
-    if (stringified1 != stringified2) {
-        // console.log(dadosFormulario);
-        // console.log(dadosFormularioObject);
     }
 
     return dadosFormulario;
@@ -123,7 +115,7 @@ function popularTabela() {
         <b>TOTAL</b>
         </th>
         <td>
-        ${lines.length - 1}
+        ${lines.length - 2}
         </td>
         </tr>
         `;
