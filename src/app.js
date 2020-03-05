@@ -18,13 +18,15 @@ function convertFormToCSV(formData) {
 }
 
 function getFormData() {
-    const dadosFotos = $('.fotos-container :input').serializeArray();
+    // const dadosFotos = $('.fotos-container :input').serializeArray();
     const outrosDados = $("form").serializeArray();
 
-    let dadosFormularioObject = {
-        ...outrosDados,
-        ...dadosFotos
-    };
+    // let dadosFormularioObject = {
+    //     ...outrosDados,
+    //     ...dadosFotos
+    // };
+
+    let dadosFormularioObject = outrosDados;
 
     let dadosFormulario = [];
 
