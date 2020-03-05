@@ -14,8 +14,6 @@ function convertFormToCSV(formData) {
         localStorage.getItem(localStorage.key(i));
     }
 
-    // alert('numero de sujeitos: ' + (++i));
-
     localStorage.setItem('sujeito_' + ++i, data);
 }
 
@@ -38,8 +36,8 @@ function getFormData() {
 
     const stringified2 = JSON.stringify(dadosFormulario);
     if (stringified1 != stringified2) {
-        console.log(dadosFormulario);
-        console.log(dadosFormularioObject);
+        // console.log(dadosFormulario);
+        // console.log(dadosFormularioObject);
     }
 
     return dadosFormulario;
@@ -50,6 +48,8 @@ function readFormData(event) {
 
     try {
         const dadosFormulario = getFormData();
+
+        storeHeaders(dadosFormulario);
 
         convertFormToCSV(dadosFormulario);
 
@@ -67,7 +67,9 @@ function fetchDataFromLocalStorage() {
     let resultado = '';
     let i = 0;
     for (i = 0, len = localStorage.length; i < len; ++i) {
-        resultado += localStorage.getItem(localStorage.key(i));
+        if (localStorage.key(i) != 'headers') {
+            resultado += localStorage.getItem(localStorage.key(i));
+        }
     }
 
     resultado += '\n';
@@ -82,8 +84,17 @@ function exportarCSV() {
 
 
 function popularTabela() {
-    const csv = fetchDataFromLocalStorage()
+    const headerCsv = localStorage.getItem('headers');
+    const csv = fetchDataFromLocalStorage();
     const lines = csv.split('\n');
+    const headers = headerCsv.split(';');
+
+    headers.forEach(header => {
+        const data = document.createElement('td');
+        data.innerText = header;
+        $('table thead tr.headers').append(data);
+    });
+
 
     lines.forEach((line, idx) => {
         if (line.length > 0) {
@@ -151,7 +162,6 @@ $(() => {
     });
 
     aleatorizarFotos();
-
 });
 
 
@@ -171,6 +181,34 @@ function __teste() {
         p.innerText += obj.name;
         p.innerText += ' - ';
     });
+}
 
 
+
+function storeHeaders(formData) {
+
+    const oldHeaders = localStorage.getItem('headers');
+
+    let data = '';
+
+    formData.forEach(
+        question => {
+            data += question.name + ';';
+        }
+    );
+
+    data += '\n';
+
+    let i = 0;
+    for (i = 0, len = localStorage.length; i < len; ++i) {
+        localStorage.getItem(localStorage.key(i));
+    }
+
+    localStorage.setItem('headers', data);
+
+    if (oldHeaders && localStorage.getItem('headers') != oldHeaders) {
+        alert('erro nos headers');
+        console.log(oldHeaders);
+        console.log(localStorage.getItem('headers'));
+    }
 }
