@@ -63,8 +63,6 @@ function fetchDataFromLocalStorage() {
     for (i = 0, len = localStorage.length; i < len; ++i) {
 
         const key = localStorage.key(i);
-        // alert(key != 'headers' && key.split('_')[0] != 'sujeito');
-        // continue;
 
         if (key != 'headers' && key.split('_')[0] != 'sujeito') {
             continue;
@@ -85,6 +83,11 @@ function exportarCSV(event) {
     $(event.target).attr('disabled', true);
     const headerCsv = localStorage.getItem('headers');
     const csv = fetchDataFromLocalStorage();
+
+    if (!csv || !headerCsv) {
+        return;
+    }
+
     const lines = csv.split('\n');
     const headers = headerCsv.split(';');
 
@@ -113,8 +116,17 @@ function exportarCSV(event) {
 function popularTabela() {
     const headerCsv = localStorage.getItem('headers');
     const csv = fetchDataFromLocalStorage();
+
+    if (!csv || !headerCsv) {
+        return;
+    }
+
     const lines = csv.split('\n');
     const headers = headerCsv.split(';');
+
+    const counter = document.createElement('td');
+    counter.innerText = '#';
+    $('table thead tr.headers').append(counter);
 
     headers.forEach(header => {
         const data = document.createElement('td');
@@ -191,6 +203,18 @@ $(() => {
     aleatorizarFotos();
 });
 
+
+
+
+function limparTudo() {
+    if (prompt('Escreva limpar para apagar todos os dados (ATENÇÃO: ESSA AÇÃO NÃO PODE SER DESFEITA)').toLowerCase() == 'limpar') {
+        localStorage.clear();
+        alert('dados apagados com sucesso');
+        window.location.reload();
+    } else {
+        alert('A confirmação falhou, tente novamente.');
+    }
+}
 
 
 function __teste() {
