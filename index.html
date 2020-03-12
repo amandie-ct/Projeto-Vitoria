@@ -58,19 +58,22 @@
 
         <div class="form-group">
             4. Tempo de moradia no local: <br>
-            <input required type="radio" name="tempo_moradia" value="1" id="t-ate-10">
-            <label for="t-ate-10">Até 10 anos</label>
+            <input required type="radio" name="tempo_moradia" value="1" id="t-ate-5">
+            <label for="t-ate-5">Até 5 anos</label>
+            <br>                                                                
+            <input required type="radio" name="tempo_moradia" value="2" id="t-ate-10">
+            <label for="t-ate-10">6 a 10 anos</label>
             <br>
-            <input required type="radio" name="tempo_moradia" value="2" id="t-11-15">
+            <input required type="radio" name="tempo_moradia" value="3" id="t-11-15">
             <label for="t-11-15">11 a 15 anos</label>
             <br>
-            <input required type="radio" name="tempo_moradia" value="3" id="t-16-25"> 
+            <input required type="radio" name="tempo_moradia" value="4" id="t-16-25"> 
             <label for="t-16-25">16 a 25 anos</label>
             <br>
-            <input required type="radio" name="tempo_moradia" value="4" id="t-26-35">
+            <input required type="radio" name="tempo_moradia" value="5" id="t-26-35">
             <label for="t-26-35">26 a 35 anos</label>
             <br>
-            <input required type="radio" name="tempo_moradia" value="5" id="t-36-45">
+            <input required type="radio" name="tempo_moradia" value="6" id="t-36-45">
             <label for="t-36-45">36 a 45 anos</label>
             <br>
             <input required type="radio" name="tempo_moradia" value="6" id="t-46">
@@ -204,8 +207,11 @@
             <input required type="radio" name="ultimo_avistamento" value="6" id="avist-20a">
             <label for="avist-20a">Há mais de 20 anos</label>
             <br>
-            <input required type="radio" name="ultimo_avistamento" value="N/a" id="avist-nulo">
+            <input required type="radio" name="ultimo_avistamento" value="Nunca" id="avist-nulo">
             <label for="avist-nulo">Nunca vi</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="n/a" id="avist-na">
+            <label for="avist-na">Não se aplica</label>
             <br>
         </div>
 
@@ -216,21 +222,29 @@
             <label for="cac-s">Sim</label>
             <input required type="radio" name="cacando" value="2" id="cac-n">
             <label for="cac-n">Não</label>
+            <input required type="radio" name="cacando" value="3" id="cac-na">
+            <label for="cac-na">Não se aplica</label>
             <br> - Criando <br>
             <input required type="radio" name="criando" value="1" id="cri-s">
             <label for="cri-s">Sim</label>
             <input required type="radio" name="criando" value="2" id="cri-n">
             <label for="cri-n">Não</label>
+            <input required type="radio" name="criando" value="3" id="cri-na">
+            <label for="cri-na">Não se aplica</label>
             <br> - Caçando pra comer/comendo <br>
             <input required type="radio" name="comendo" value="1" id="com-s">
             <label for="com-s">Sim</label>
             <input required type="radio" name="comendo" value="2" id="com-n">
             <label for="com-n">Não</label>
+            <input required type="radio" name="comendo" value="3" id="com-na">
+            <label for="com-na">Não se aplica</label>     
             <br> - Vendendo <br>
             <input required type="radio" name="vendendo" value="1" id="ven-s">
             <label for="ven-s">Sim</label>
             <input required type="radio" name="vendendo" value="2" id="ven-n">
             <label for="ven-n">Não</label>
+            <input required type="radio" name="vendendo" value="3" id="ven-na">
+            <label for="ven-na">Não se aplica</label>
             <br>
 
         </div>
@@ -259,6 +273,9 @@
             <input required type="radio" name="avistamento_mes" value="7" id="avist-m-na">
             <label for="avist-m-na">Não sei</label>
             <br>
+            <input required type="radio" name="avistamento_mes" value="n/a" id=av-na">
+            <label for="av-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
@@ -284,6 +301,9 @@
             <input required type="radio" name="avistamento_mes_5" value="7" id="avist-5-na">
             <label for="avist-5-na">Não sei</label>
             <br>
+            <input required type="radio" name="avistamento_mes_5" value="n/a" id="avist-5-na">
+            <label for="avist-5-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
@@ -297,8 +317,11 @@
             <input required type="radio" name="populacao_situacao" value="3" id="pop-est">
             <label for="pop-est">Está a mesma coisa</label>
             <br>
-            <input required type="radio" name="populacao_situacao" value="4" id="pop-na">
-            <label for="pop-na">Não sei dizer</label>
+            <input required type="radio" name="populacao_situacao" value="4" id="pop-naos">
+            <label for="pop-naos">Não sei dizer</label>
+            <br>
+            <input required type="radio" name="populacao_situacao" value="n/a" id="pop-na">
+            <label for="pop-na">Não se aplica</label>
             <br>
         </div>
 
@@ -376,8 +399,11 @@
             <input required type="radio" name="motivo_atrapalham" value="4" id="atrp-outr">
             <label for="atrp-outr">Outro motivo</label>
             <br>
-            <input required type="radio" name="motivo_atrapalham" value="N/a" id="atrp-nao">
+            <input required type="radio" name="motivo_atrapalham" value="5" id="atrp-nao">
             <label for="atrp-nao">Não atrapalham</label>
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="n/a" id="atrp-na">
+            <label for="atrp-na">Não se aplica</label>
             <br>
         </div>
 
@@ -2348,21 +2374,16 @@
                 </div>
             </div>
         </div>
-
+        <br>
         <textarea name="comentario" id="comentario" class="form-control"></textarea>
-
+        <br>
+                
         <div class="centered-flex-container">
             <button class="btn btn-outline-primary" type="submit" value="Enviar">
                 Armazenar dados
             </button>
         </div>
     </form>
-
-    <div class="row">
-        <div class="col-12">
-            <p class="resultado-ordem"></p>
-        </div>
-    </div>
 
     <script src="src/app.js"></script>
 </body>
