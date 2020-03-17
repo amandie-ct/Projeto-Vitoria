@@ -54,8 +54,11 @@
         <a class="btn btn-success mt-3 ml-3" href="index.html">Voltar</a>
 
         <div class="centered-flex-container">
-            <button class="btn btn-primary" onclick="exportarCSV()">Baixar CSV</button>
+            <button class="btn btn-primary" onclick="exportarCSV(event)">Baixar CSV</button>
         </div>
+
+        <button class="btn btn-danger mr-3" onclick="limparTudo()">Limpar Tudo</button>
+
     </header>
 
     <main>
@@ -66,7 +69,6 @@
         <table class="table">
             <thead class="sticky-top">
                 <tr class="headers">
-                    <th>#</th>
                 </tr>
             </thead>
             <tbody>

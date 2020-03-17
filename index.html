@@ -33,7 +33,7 @@
 
         <!-- PARTE 1 - PERGUNTAS -->
         <div class="form-group">
-            1. Sexo<br />
+            1. Sexo<br/>
             <input required type="radio" name="sexo" value="1" id="sexo-feminino" />
             <label for="sexo-feminino">Feminino</label>
 
@@ -49,211 +49,392 @@
         <div class="form-group">
             2. Idade <br />
 
-            <input required type="text" name="idade" size="3" /><br />
+            <input required type="text" name="idade" size="3" /><br>
         </div>
 
         <div class="form-group">
-            <label for="cidade_comunidade">3. Cidade/comunidade</label><br />
+            <label for="cidade_comunidade">3. Cidade/comunidade</label><br/>
             <input required type="text" name="cidade" id="cidade_comunidade" size="50" /><br />
         </div>
 
         <div class="form-group">
-            4. Tempo de moradia no local: <br />
-            <input required type="radio" name="tempo_moradia" value="1" />Até 10 anos
-            <br />
-            <input required type="radio" name="tempo_moradia" value="2" /> 11 a 15 anos
-            <br />
-            <input required type="radio" name="tempo_moradia" value="3" /> 16 a 25 anos
-            <br />
-            <input required type="radio" name="tempo_moradia" value="4" /> 26 a 35 anos
-            <br />
-            <input required type="radio" name="tempo_moradia" value="5" /> 36 a 45 anos
-            <br />
-            <input required type="radio" name="tempo_moradia" value="6" /> Há mais de 46 anos<br />
+            4. Tempo de moradia no local: <br>
+            <input required type="radio" name="tempo_moradia" value="1" id="t-ate-5">
+            <label for="t-ate-5">Até 5 anos</label>
+            <br>                                                                
+            <input required type="radio" name="tempo_moradia" value="2" id="t-ate-10">
+            <label for="t-ate-10">6 a 10 anos</label>
+            <br>
+            <input required type="radio" name="tempo_moradia" value="3" id="t-11-15">
+            <label for="t-11-15">11 a 15 anos</label>
+            <br>
+            <input required type="radio" name="tempo_moradia" value="4" id="t-16-25"> 
+            <label for="t-16-25">16 a 25 anos</label>
+            <br>
+            <input required type="radio" name="tempo_moradia" value="5" id="t-26-35">
+            <label for="t-26-35">26 a 35 anos</label>
+            <br>
+            <input required type="radio" name="tempo_moradia" value="6" id="t-36-45">
+            <label for="t-36-45">36 a 45 anos</label>
+            <br>
+            <input required type="radio" name="tempo_moradia" value="6" id="t-46">
+            <label for="t-46">Há mais de 46 anos</label>
+            <br>
         </div>
 
         <div class="form-group">
-            5. Ocupação: <br />
+            5. Ocupação: <br>
 
-            <input required type="radio" name="ocupacao" value="1"> Agricultor em meio período<br>
-            <input required type="radio" name="ocupacao" value="2"> Agricultor tempo integral<br>
-            <input required type="radio" name="ocupacao" value="3"> Pecuarista<br>
-            <input required type="radio" name="ocupacao" value="4"> Dona de casa<br>
-            <input required type="radio" name="ocupacao" value="5"> Tratador CETAS<br>
-            <input required type="radio" name="ocupacao" value="6"> Funcionário CETAS<br>
-            <input required type="radio" name="ocupacao" value="7"> Estudante<br>
-            <input required type="radio" name="ocupacao" value="8"> Outro<br>
+            <input required type="radio" name="ocupacao" value="1" id="agricultor-meio">
+            <label for="agricultor-meio">Agricultor em meio período</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="2" id="agricultor">
+            <label for="agricultor">Agricultor tempo integral</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="3" id="pecuarista">
+            <label for="pecuarista">Pecuarista</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="4" id="do-lar">
+            <label for="do-lar">Dona de casa</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="5" id="tratador-cetas">
+            <label for="tratador-cetas">Tratador CETAS</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="6" id="funcionario-cetas">
+            <label for="funcionario-cetas">Funcionário CETAS</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="7" id="estudante">
+            <label for="estudante">Estudante</label>
+            <br>
+            <input required type="radio" name="ocupacao" value="8" id="outro-ocup">
+            <label for="outro-ocup">Outro</label>
+            <br>
 
         </div>
 
         <div class="form-group">
-            6. Escolaridade: <br />
-            <input required type="radio" name="escolaridade" value="1" /> Não alfabetizado
-            <br />
-            <input required type="radio" name="escolaridade" value="2" /> Ensino fundamental I (até 5ª série) incompleto
-            <br />
-            <input required type="radio" name="escolaridade" value="3" /> Ensino fundamental I (até 5ª série) completo
-            <br />
-            <input required type="radio" name="escolaridade" value="4" /> Ensino fundamental II (até 8ª série) incompleto
-            <br />
-            <input required type="radio" name="escolaridade" value="5" /> Ensino fundamental II (até 8ª série)completo
-            <br />
-            <input required type="radio" name="escolaridade" value="6" /> Ensino médio incompleto<br />
-            <input required type="radio" name="escolaridade" value="7" /> Ensino médio completo<br />
-            <input required type="radio" name="escolaridade" value="8" /> Ensino superior incompleto<br />
-            <input required type="radio" name="escolaridade" value="9" /> Ensino superior completo<br />
-            <input required type="radio" name="escolaridade" value="10" /> Pós-graduação
-            <br />
+            6. Escolaridade: <br>
+            <input required type="radio" name="escolaridade" value="1" id="analf">
+            <label for="analf">Não alfabetizado</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="2" id="fund-I-inc">
+            <label for="fund-I-inc">Ensino fundamental I (até 5ª série) incompleto</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="3" id="fund-I">
+            <label for="fund-I">Ensino fundamental I (até 5ª série) completo</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="4" id="fund-II-inc">
+            <label for="fund-II-inc">Ensino fundamental II (até 8ª série) incompleto</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="5" id="fund-II">
+            <label for="fund-II">Ensino fundamental II (até 8ª série)completo</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="6" id="ens-medio-inc">
+            <label for="ens-medio-inc">Ensino médio incompleto</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="7" id="ens-medio">
+            <label for="ens-medio">Ensino médio completo</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="8" id="ens-sup-inc">
+            <label for="ens-sup-inc">Ensino superior incompleto</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="9" id="ens-sup">
+            <label for="ens-sup">Ensino superior completo</label>
+            <br>
+            <input required type="radio" name="escolaridade" value="10" id="pos-grad">
+            <label for="pos-grad">Pós-graduação</label>
+            <br>
         </div>
 
         <div class="form-group">
             7. Você conhece os macacos-prego? <br />
-            <input required type="radio" name="conhece_macacos" value="1" /> Sim
-            <br />
-            <input required type="radio" name="conhece_macacos" value="2" /> Não
-            <br />
+            <input required type="radio" name="conhece_macacos" value="1" id="conhece-sim">
+            <label for="conhece-sim">Sim</label>
+            <br>
+            <input required type="radio" name="conhece_macacos" value="2" id="conhece-nao">
+            <label for="conhece-nao">Não</label>
+            <br>
         </div>
 
         <div class="form-group">
             8. Em que contexto você viu macaco-prego pela primeira vez? <br />
-            <input required type="radio" name="contexto_avistamento" value="1" /> Em liberdade, na mata<br />
-            <input required type="radio" name="contexto_avistamento" value="2" /> No zoológico
-            <br />
-            <input required type="radio" name="contexto_avistamento" value="3" /> Reportagem na TV/internet<br />
-            <input required type="radio" name="contexto_avistamento" value="4" /> Como pet/de tráfico<br />
-            <input required type="radio" name="contexto_avistamento" value="5" /> Nunca vi<br />
-            <input required type="radio" name="contexto_avistamento" value="6" /> Não sei<br />
+            <input required type="radio" name="contexto_avistamento" value="1" id="livre">
+            <label for="livre">Em liberdade, na mata</label>
+            <br>
+            <input required type="radio" name="contexto_avistamento" value="2" id="zoo">
+            <label for="zoo">No zoológico</label>
+            <br>
+            <input required type="radio" name="contexto_avistamento" value="3" id="midia">
+            <label for="midia">Reportagem na TV/internet</label>
+            <br>
+            <input required type="radio" name="contexto_avistamento" value="4" id="pet-trafico">
+            <label for="pet-trafico">Como pet/de tráfico</label>
+            <br>
+            <input required type="radio" name="contexto_avistamento" value="5" id="nunca-vi">
+            <label for="nunca-vi">Nunca vi</label>
+            <br>
+            <input required type="radio" name="contexto_avistamento" value="6" id="nao-sei-contx">
+            <label for="nao-sei-contx">Não sei</label>
+            <br>
         </div>
 
         <div class="form-group">
             9. Você avista macacos onde você vive? <br />
-            <input required type="radio" name="avista_macacos" value="1" /> Sim
-            <br />
-            <input required type="radio" name="avista_macacos" value="2" /> Não
-            <br />
+            <input required type="radio" name="avista_macacos" value="1" id="avista-s">
+            <label for="avista-s">Sim</label>
+            <br>
+            <input required type="radio" name="avista_macacos" value="2" id="avista-n">
+            <label for="avista-n">Não</label>
+            <br>
         </div>
 
         <div class="form-group">
             10. Quando foi a última vez? <br />
-            <input required type="radio" name="ultimo_avistamento" value="1" /> Nos últimos 6 meses<br />
-            <input required type="radio" name="ultimo_avistamento" value="2" /> Esse ano
-            <br />
-            <input required type="radio" name="ultimo_avistamento" value="3" /> Há menos de 5 anos<br />
-            <input required type="radio" name="ultimo_avistamento" value="4" /> Há mais de 5 anos<br />
-            <input required type="radio" name="ultimo_avistamento" value="5" /> Há mais de 10 anos<br />
-            <input required type="radio" name="ultimo_avistamento" value="6" /> Há mais de 20 anos<br />
-            <input required type="radio" name="ultimo_avistamento" value="N/a" /> Nunca vi<br />
+            <input required type="radio" name="ultimo_avistamento" value="1" id="avist-6m">
+            <label for="avist-6m">Nos últimos 6 meses</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="2" id="avist-12m">
+            <label for="avist-12m">Esse ano</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="3" id="avist-5a">
+            <label for="avist-5a">Há menos de 5 anos</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="4" id="avist-5a+">
+            <label for="avist-5a+">Há mais de 5 anos</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="5" id="avist-10a">
+            <label for="avist-10a">Há mais de 10 anos</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="6" id="avist-20a">
+            <label for="avist-20a">Há mais de 20 anos</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="Nunca" id="avist-nulo">
+            <label for="avist-nulo">Nunca vi</label>
+            <br>
+            <input required type="radio" name="ultimo_avistamento" value="n/a" id="avist-na">
+            <label for="avist-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
-            11. Você já soube de pessoas na região: <br /> - Caçando/matando por diversão ou defesa <br>
-            <input required type="radio" name="cacando" value="1" /> Sim
-            <input required type="radio" name="cacando" value="2" /> Não<br> - Criando <br>
-            <input required type="radio" name="criando" value="1" /> Sim
-            <input required type="radio" name="criando" value="2" /> Não<br> - Caçando pra comer/comendo <br>
-            <input required type="radio" name="comendo" value="1" /> Sim
-            <input required type="radio" name="comendo" value="2" /> Não<br> - Vendendo <br>
-            <input required type="radio" name="vendendo" value="1" /> Sim
-            <input required type="radio" name="vendendo" value="2" /> Não<br>
+            11. Você já soube de pessoas na região:
+            <br>- Caçando/matando por diversão ou defesa<br>
+            <input required type="radio" name="cacando" value="1" id="cac-s">
+            <label for="cac-s">Sim</label>
+            <input required type="radio" name="cacando" value="2" id="cac-n">
+            <label for="cac-n">Não</label>
+            <input required type="radio" name="cacando" value="3" id="cac-na">
+            <label for="cac-na">Não se aplica</label>
+            <br> - Criando <br>
+            <input required type="radio" name="criando" value="1" id="cri-s">
+            <label for="cri-s">Sim</label>
+            <input required type="radio" name="criando" value="2" id="cri-n">
+            <label for="cri-n">Não</label>
+            <input required type="radio" name="criando" value="3" id="cri-na">
+            <label for="cri-na">Não se aplica</label>
+            <br> - Caçando pra comer/comendo <br>
+            <input required type="radio" name="comendo" value="1" id="com-s">
+            <label for="com-s">Sim</label>
+            <input required type="radio" name="comendo" value="2" id="com-n">
+            <label for="com-n">Não</label>
+            <input required type="radio" name="comendo" value="3" id="com-na">
+            <label for="com-na">Não se aplica</label>     
+            <br> - Vendendo <br>
+            <input required type="radio" name="vendendo" value="1" id="ven-s">
+            <label for="ven-s">Sim</label>
+            <input required type="radio" name="vendendo" value="2" id="ven-n">
+            <label for="ven-n">Não</label>
+            <input required type="radio" name="vendendo" value="3" id="ven-na">
+            <label for="ven-na">Não se aplica</label>
+            <br>
 
         </div>
 
         <div class="form-group">
-            12. Hoje em dia, quantos macacos você diria ver num mês? <br />
+            12. Hoje em dia, quantos macacos você diria ver num mês? <br>
 
-            <input required type="radio" name="avistamento_mes" value="1" /> 0 a 5 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="2" /> 5 a 10 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="3" /> 10 a 30 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="4" /> 30 a 50 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="5" /> 50 a 100 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="6" /> Mais de 100 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes" value="7" /> Não sei
-            <br />
+            <input required type="radio" name="avistamento_mes" value="1" id="avist-m-0-5">
+            <label for="avist-m-0-5">0 a 5 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="2" id="avist-m-5-10">
+            <label for="avist-m-5-10">5 a 10 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="3" id="avist-m-10-30">
+            <label for="avist-m-10-30">10 a 30 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="4" id="avist-m-30-50">
+            <label for="avist-m-30-50">30 a 50 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="5" id="avist-m-50-100">
+            <label for="avist-m-50-100">50 a 100 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="6" id="avist-m-100">
+            <label for="avist-m-100">Mais de 100 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="7" id="avist-m-na">
+            <label for="avist-m-na">Não sei</label>
+            <br>
+            <input required type="radio" name="avistamento_mes" value="n/a" id=av-na">
+            <label for="av-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
             13. E 5 anos atrás, quantos macacos você diria ver num mês? <br />
-            <input required type="radio" name="avistamento_mes_5" value="1" /> 0 a 5 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="2" /> 5 a 10 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="3" /> 10 a 30 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="4" /> 30 a 50 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="5" /> 50 a 100 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="6" /> Mais de 100 macacos por mês<br />
-            <input required type="radio" name="avistamento_mes_5" value="7" /> Não sei
-            <br />
+            <input required type="radio" name="avistamento_mes_5" value="1" id="avist-5-ate5">
+            <label for="avist-5-ate5">0 a 5 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="2" id="avist-5-ate10">
+            <label for="avist-5-ate10">5 a 10 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="3" id="avist-5-ate30">
+            <label for="avist-5-ate30">10 a 30 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="4" id="avist-5-ate50">
+            <label for="avist-5-ate50">30 a 50 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="5" id="avist-5-ate100">
+            <label for="avist-5-ate100">50 a 100 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="6" id="avist-5-100+">
+            <label for="avist-5-100+">Mais de 100 macacos por mês</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="7" id="avist-5-na">
+            <label for="avist-5-na">Não sei</label>
+            <br>
+            <input required type="radio" name="avistamento_mes_5" value="n/a" id="avist-5-na">
+            <label for="avist-5-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
             14. Você acha que a população de macacos-prego está: <br />
-            <input required type="radio" name="populacao_situacao" value="1" /> Aumentando
-            <br />
-            <input required type="radio" name="populacao_situacao" value="2" /> Diminuindo
-            <br />
-            <input required type="radio" name="populacao_situacao" value="3" /> Está a mesma coisa<br />
-            <input required type="radio" name="populacao_situacao" value="4" /> Não sei dizer<br />
+            <input required type="radio" name="populacao_situacao" value="1" id="pop-aum">
+            <label for="pop-aum">Aumentando</label>
+            <br>
+            <input required type="radio" name="populacao_situacao" value="2" id="pop-dim">
+            <label for="pop-dim">Diminuindo</label>
+            <br>
+            <input required type="radio" name="populacao_situacao" value="3" id="pop-est">
+            <label for="pop-est">Está a mesma coisa</label>
+            <br>
+            <input required type="radio" name="populacao_situacao" value="4" id="pop-naos">
+            <label for="pop-naos">Não sei dizer</label>
+            <br>
+            <input required type="radio" name="populacao_situacao" value="n/a" id="pop-na">
+            <label for="pop-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
-            15. Se está diminuindo, por que você acha que está diminuindo? <br />
+            15. Se está diminuindo, por que você acha que está diminuindo? <br>
 
-            <input required type="radio" name="motivo_diminuicao" value="1" /> Caça
-            <br />
-            <input required type="radio" name="motivo_diminuicao" value="2" /> Comércio ilegal <br />
-            <input required type="radio" name="motivo_diminuicao" value="3" /> Destruição das florestas <br />
-            <input required type="radio" name="motivo_diminuicao" value="4" /> Falta de comida <br />
-            <input required type="radio" name="motivo_diminuicao" value="5" /> Brigas entre eles <br />
-            <input required type="radio" name="motivo_diminuicao" value="6" /> Não sei <br />
-            <input required type="radio" name="motivo_diminuicao" value="7" /> Não se aplica <br />
-            <input required type="radio" name="motivo_diminuicao" value="8" /> Outro
-            <br />
-            <input type="text" name="outro_motivo_diminuição" /><br />
+            <input required type="radio" name="motivo_diminuicao" value="1" id="dim-cac">
+            <label for="dim-cac">Caça</label>
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="2" id="dim-traf">
+            <label for="dim-traf">Comércio ilegal</label> 
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="3" id="dim-defl">
+            <label for="dim-defl">Destruição das florestas</label> 
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="4" id="dim-fome">
+            <label for="dim-fome">Falta de comida </label>
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="5" id="dim-conf">
+            <label for="dim-conf">Brigas entre eles</label> 
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="6" id="dim-ns">
+            <label for="dim-ns">Não sei </label>
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="7" id="dim-na">
+            <label for="dim-na">Não se aplica </label>
+            <br>
+            <input required type="radio" name="motivo_diminuicao" value="8" id="dim-otr">
+            <label for="dim-otr">Outro</label>
+            <br>
+            <input type="text" name="outro_motivo_diminuição">
+            <br>
         </div>
 
         <div class="form-group">
             16. Se está aumentando, por que você acha que está aumentando? <br />
-            <input required type="radio" name="motivo_aumento" value="1" /> Muita comida <br />
-            <input required type="radio" name="motivo_aumento" value="2" /> Roubando comida da gente <br />
-            <input required type="radio" name="motivo_aumento" value="3" /> Reprodução deles <br />
-            <input required type="radio" name="motivo_aumento" value="4" /> Solturas IBAMA <br />
-            <input required type="radio" name="motivo_aumento" value="5" /> Não sei, só vejo mais do que antes <br />
-            <input required type="radio" name="motivo_aumento" value="6" /> Não se aplica <br />
-            <input required type="radio" name="motivo_aumento" value="7" /> Outro
-            <br />
-            <input type="text" name="outro_motivo_aumento" /><br />
+            <input required type="radio" name="motivo_aumento" value="1" id="aumt-com"/>
+            <label for="aumt-com">Muita comida</label> 
+            <br>
+            <input required type="radio" name="motivo_aumento" value="2" id="aumt-furt"/>
+            <label for="aumt-furt">Roubando comida da gente</label> 
+            <br>
+            <input required type="radio" name="motivo_aumento" value="3" id="aumt-repr">
+            <label for="aumt-repr">Reprodução deles </label>
+            <br>
+            <input required type="radio" name="motivo_aumento" value="4" id="aumt-solt">
+            <label for="aumt-solt">Solturas IBAMA</label> 
+            <br>
+            <input required type="radio" name="motivo_aumento" value="5" id="aumt-desc">
+            <label for="aumt-desc">Não sei, só vejo mais do que antes</label> 
+            <br>
+            <input required type="radio" name="motivo_aumento" value="6" id="aumt-na">
+            <label for="aumt-na">Não se aplica</label>
+            <br>
+            <input required type="radio" name="motivo_aumento" value="7" id="aumt-otr">
+            <label for="aumt-otr">Outro</label>
+            <br>
+            <input type="text" name="outro_motivo_aumento"><br>
         </div>
 
         <div class="form-group">
-            17. De 1 a 5, o quanto você diria que os macacos te atrapalham? <br />
+            17. De 1 a 5, o quanto você diria que os macacos te atrapalham? <br>
 
-            <input required type="text" name="macacos_atrapalham" size="2" /><br /> 17.2. Por quê?<br />
-            <input required type="radio" name="motivo_atrapalham" value="1" /> Invadem a lavoura <br />
-            <input required type="radio" name="motivo_atrapalham" value="2" /> Arrancam telhas <br />
-            <input required type="radio" name="motivo_atrapalham" value="3" /> Invadem casas <br />
-            <input required type="radio" name="motivo_atrapalham" value="4" /> Outro motivo <br />
-            <input required type="radio" name="motivo_atrapalham" value="N/a" /> Não atrapalham <br />
+            <input required type="text" name="macacos_atrapalham" size="2"><br>
+            17.2. Por quê? <br>
+            <input required type="radio" name="motivo_atrapalham" value="1" id="atrp-invasao">
+            <label for="atrp-invasao">Invadem a lavoura</label>
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="2" id="atrp-destelha">
+            <label for="atrp-destelha">Arrancam telhas</label> 
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="3" id="atrp-invas-cas">
+            <label for="atrp-invas-cas">Invadem casas</label> 
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="4" id="atrp-outr">
+            <label for="atrp-outr">Outro motivo</label>
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="5" id="atrp-nao">
+            <label for="atrp-nao">Não atrapalham</label>
+            <br>
+            <input required type="radio" name="motivo_atrapalham" value="n/a" id="atrp-na">
+            <label for="atrp-na">Não se aplica</label>
+            <br>
         </div>
 
         <div class="form-group">
             18. De 1 a 5, o quanto você diria que gosta de macacos macacos-prego?
-            <br />
+            <br>
 
-            <input required type="text" name="gosta_macacos" size="2" /><br />
+            <input required type="text" name="gosta_macacos" size="2" /><br>
         </div>
 
         <div class="form-group">
-            19. Você tinha algum animal de estimação quando era criança? <br />
+            19. Você tinha algum animal de estimação quando era criança? <br>
 
-            <input required type="radio" name="tinha_pet_infancia" value="1" /> Sim<br />
-            <input required type="radio" name="tinha_pet_infancia" value="2" /> Não<br /> 19.1. Se sim, qual? <br />
-            <input type="text" name="qual_pet_infancia" /><br />
+            <input required type="radio" name="tinha_pet_infancia" value="1" id="pet-inf-s">
+            <label for="pet-inf-s">Sim</label><br>
+            <input required type="radio" name="tinha_pet_infancia" value="2" id="pet-inf-n"> 
+            <label for="pet-inf-n">Não</label><br>
+            19.1. Se sim, qual? <br>
+            <input type="text" name="qual_pet_infancia"><br>
         </div>
 
         <div class="form-group">
-            20. Você tem algum animal de estimação hoje? <br />
+            20. Você tem algum animal de estimação hoje? <br>
 
-            <input required type="radio" name="tem_pet_atual" value="1" /> Sim <br />
-            <input required type="radio" name="tem_pet_atual" value="2" /> Não <br /> 20.1. Se sim, qual? <br />
-            <input type="text" name="qual_pet_atual" /><br />
+            <input required type="radio" name="tem_pet_atual" value="1" id="pet-s">
+            <label for="pet-s">Sim </label><br>
+            <input required type="radio" name="tem_pet_atual" value="2" id="pet-n">
+            <label for="pet-n">Não </label><br>
+            20.1. Se sim, qual? <br>
+            <input type="text" name="qual_pet_atual"><br>
         </div>
 
         <!-- Parte 2 - FOTOS/EMOÇÕES -->
@@ -1031,7 +1212,7 @@
             24. Que animais da imagem você acha que sentem as seguintes emoções:
             <br /> 1) Medo: <br />
             <div class="row emocao">
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_passaro">
                         <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
                     </label>
@@ -1045,7 +1226,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_galo">
                         <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
                     </label>
@@ -1060,7 +1241,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_macaco">
                         <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
                     </label>
@@ -1074,7 +1255,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_lagarto">
                         <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
                     </label>
@@ -1088,7 +1269,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_vaca">
                         <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
                     </label>
@@ -1102,7 +1283,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_papagaio">
                         <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
                     </label>
@@ -1116,7 +1297,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_cobra">
                         <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
                     </label>
@@ -1130,7 +1311,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_gato">
                         <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
                     </label>
@@ -1144,7 +1325,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_tartaruga">
                         <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
                     </label>
@@ -1158,7 +1339,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_cachorro">
                         <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
                     </label>
@@ -1172,7 +1353,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_peixe">
                         <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
                     </label>
@@ -1186,7 +1367,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_sapo">
                         <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
                     </label>
@@ -1200,7 +1381,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_rato">
                         <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
                     </label>
@@ -1214,7 +1395,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_porco">
                         <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
                     </label>
@@ -1228,7 +1409,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_humano">
                         <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
                     </label>
@@ -1242,7 +1423,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_medo_borboleta">
                         <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
                     </label>
@@ -1260,7 +1441,7 @@
             2) Felicidade: <br>
 
             <div class="row emocao">
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_passaro">
                         <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
                     </label>
@@ -1274,7 +1455,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_galo">
                         <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
                     </label>
@@ -1288,7 +1469,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_macaco">
                         <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
                     </label>
@@ -1302,7 +1483,7 @@
                         <img class="image-fluid" src="./imagens/thumbs-down.png" alt="felicidadenao" width="80">
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_lagarto">
                         <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
                     </label>
@@ -1316,7 +1497,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_vaca">
                         <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
                     </label>
@@ -1330,7 +1511,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_papagaio">
                         <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
                     </label>
@@ -1344,7 +1525,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_cobra">
                         <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
                     </label>
@@ -1358,7 +1539,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_gato">
                         <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
                     </label>
@@ -1372,7 +1553,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_tartaruga">
                         <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
                     </label>
@@ -1386,7 +1567,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_cachorro">
                         <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
                         <input required type="radio" name="felicidade_cachorro" value="1" id="felicidade_cach_sim">
@@ -1399,7 +1580,7 @@
                         </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_peixe">
                         <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
                     </label>
@@ -1413,7 +1594,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_sapo">
                         <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
                     </label>
@@ -1427,7 +1608,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_rato">
                         <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
                     </label>
@@ -1441,7 +1622,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_porco">
                         <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
                     </label>
@@ -1455,7 +1636,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_humano">
                         <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
                     </label>
@@ -1469,7 +1650,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_felicidade_borboleta">
                         <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
                     </label>
@@ -1487,7 +1668,7 @@
             3) Amor: <br>
 
             <div class="row emocao">
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_passaro">
                         <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
                     </label>
@@ -1502,7 +1683,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_galo">
                         <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
                     </label>
@@ -1516,7 +1697,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_macaco">
                         <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
                     </label>
@@ -1530,7 +1711,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_lagarto">
                         <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
                     </label>
@@ -1545,7 +1726,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_vaca">
                         <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
                     </label>
@@ -1559,7 +1740,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_papagaio">
                         <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
                     </label>
@@ -1573,7 +1754,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_cobra">
                         <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
                     </label>
@@ -1588,7 +1769,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_gato">
                         <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
                     </label>
@@ -1603,7 +1784,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_tartaruga">
                         <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
                     </label>
@@ -1618,7 +1799,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_cachorro">
                         <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
                     </label>
@@ -1633,7 +1814,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_peixe">
                         <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
                     </label>
@@ -1648,7 +1829,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_sapo">
                         <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
                     </label>
@@ -1662,7 +1843,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_rato">
                         <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
                     </label>
@@ -1677,7 +1858,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_porco">
                         <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
                     </label>
@@ -1692,7 +1873,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_humano">
                         <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
                     </label>
@@ -1707,7 +1888,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_amor_borboleta">
                         <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
                     </label>
@@ -1726,7 +1907,7 @@
             4) Tristeza: <br>
 
             <div class="row emocao">
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_passaro">
                         <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
                     </label>
@@ -1741,7 +1922,7 @@
                 </div>
 
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_galo">
                         <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
                     </label>
@@ -1755,7 +1936,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_">
                         <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
                     </label>
@@ -1769,7 +1950,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_lagarto">
                         <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
                     </label>
@@ -1783,7 +1964,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_vaca">
                         <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
                     </label>
@@ -1798,7 +1979,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_papagaio">
                         <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
                     </label>
@@ -1813,7 +1994,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_cobra">
                         <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
                     </label>
@@ -1828,7 +2009,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_gato">
                         <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
                     </label>
@@ -1843,7 +2024,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_tartaruga">
                         <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
                     </label>
@@ -1858,7 +2039,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_cachorro">
                         <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
                     </label>
@@ -1873,7 +2054,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_peixe">
                         <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
                     </label>
@@ -1888,7 +2069,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_sapo">
                         <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
                     </label>
@@ -1904,7 +2085,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_rato">
                         <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
                     </label>
@@ -1919,7 +2100,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_porco">
                         <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
                     </label>
@@ -1934,7 +2115,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_humano">
                         <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
                     </label>
@@ -1949,7 +2130,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_tristeza_borboleta">
                         <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
                     </label>
@@ -1968,7 +2149,7 @@
             5) Raiva: <br />
 
             <div class="row emocao">
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_passaro">
                         <img class="image-fluid" src="./imagens/a_bird.jpg" alt="Pássaro" />
                     </label>
@@ -1982,7 +2163,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_galo">
                         <img class="image-fluid" src="./imagens/a_cock.jpg" alt="Galo" />
                     </label>
@@ -1997,7 +2178,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_macaco">
                         <img class="image-fluid" src="./imagens/a_monkey.jpg" alt="Macaco" />
                     </label>
@@ -2011,7 +2192,7 @@
 
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_lagarto">
                         <img class="image-fluid" src="./imagens/a_lizard.jpg" alt="Lagarto" />
                     </label>
@@ -2025,7 +2206,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_vaca">
                         <img class="image-fluid" src="./imagens/a_cow.jpg" alt="Vaca" />
                     </label>
@@ -2039,7 +2220,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_papagaio">
                         <img class="image-fluid" src="./imagens/a_parrot.jpg" alt="Papagaio" />
                     </label>
@@ -2053,7 +2234,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_cobra">
                         <img class="image-fluid" src="./imagens/a_snake.jpg" alt="Cobra" />
                     </label>
@@ -2067,7 +2248,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_gato">
                         <img class="image-fluid" src="./imagens/a_cat.jpg" alt="Gato" />
                     </label>
@@ -2081,7 +2262,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_tartaruga">
                         <img class="image-fluid" src="./imagens/a_turtle.jpg" alt="Tartaruga" />
                     </label>
@@ -2095,7 +2276,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_cachorro">
                         <img class="image-fluid" src="./imagens/a_dog.jpg" alt="Cachorro" />
                     </label>
@@ -2109,7 +2290,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_peixe">
                         <img class="image-fluid" src="./imagens/a_fish.jpg" alt="Peixe" />
                     </label>
@@ -2123,7 +2304,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_sapo">
                         <img class="image-fluid" src="./imagens/a_frog.jpg" alt="Sapo" />
                     </label>
@@ -2137,7 +2318,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_rato">
                         <img class="image-fluid" src="./imagens/a_mouse.jpg" alt="Rato" />
                     </label>
@@ -2151,7 +2332,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_porco">
                         <img class="image-fluid" src="./imagens/a_pig.jpg" alt="Porco" />
                     </label>
@@ -2165,7 +2346,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_humano">
                         <img class="image-fluid" src="./imagens/a_human.jpg" alt="Humano" />
                     </label>
@@ -2179,7 +2360,7 @@
                     </label>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <div class="col-6">
                     <label for="emocoes_raiva_borboleta">
                         <img class="image-fluid" src="./imagens/a_butterfly.jpg" alt="Borboleta" />
                     </label>
@@ -2194,21 +2375,16 @@
                 </div>
             </div>
         </div>
-
+        <br>
+        <textarea name="comentario" id="comentario" class="form-control"></textarea>
+        <br>
+                
         <div class="centered-flex-container">
             <button class="btn btn-outline-primary" type="submit" value="Enviar">
                 Armazenar dados
             </button>
         </div>
     </form>
-
-    <button class="btn btn-danger" onclick="__teste()">TESTAR ORDEM DAS COLUNAS</button>
-
-    <div class="row">
-        <div class="col-12">
-            <p class="resultado-ordem"></p>
-        </div>
-    </div>
 
     <script src="src/app.js"></script>
 </body>

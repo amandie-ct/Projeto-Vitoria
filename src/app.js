@@ -61,8 +61,15 @@ function fetchDataFromLocalStorage() {
     let resultado = '';
     let i = 0;
     for (i = 0, len = localStorage.length; i < len; ++i) {
+
+        const key = localStorage.key(i);
+
+        if (key != 'headers' && key.split('_')[0] != 'sujeito') {
+            continue;
+        }
+
         if (localStorage.key(i) != 'headers') {
-            resultado += localStorage.getItem(localStorage.key(i));
+            resultado += localStorage.getItem(key);
         }
     }
 
@@ -72,16 +79,54 @@ function fetchDataFromLocalStorage() {
 }
 
 
-function exportarCSV() {
-    alert('Ainda não implementado');
+function exportarCSV(event) {
+    $(event.target).attr('disabled', true);
+    const headerCsv = localStorage.getItem('headers');
+    const csv = fetchDataFromLocalStorage();
+
+    if (!csv || !headerCsv) {
+        return;
+    }
+
+    const lines = csv.split('\n');
+    const headers = headerCsv.split(';');
+
+    const data = { "access_token": "ljbk5d13qo8uk6gdqukj3kwp" };
+
+
+    data['subject'] = 'Exportação de dados';
+    data['text'] = `${headerCsv}${csv}`;
+
+    console.log(data['text']);
+
+    $.post('https://postmail.invotes.com/send',
+        data,
+        () => {
+            $(event.target).attr('disabled', false);
+            alert('Exportação deu certo!')
+        }
+    ).fail(() => {
+        $(event.target).attr('disabled', false);
+        alert('Exportação falhou: cheque a conexão com a internet.')
+    });
+
 }
 
 
 function popularTabela() {
     const headerCsv = localStorage.getItem('headers');
     const csv = fetchDataFromLocalStorage();
+
+    if (!csv || !headerCsv) {
+        return;
+    }
+
     const lines = csv.split('\n');
     const headers = headerCsv.split(';');
+
+    const counter = document.createElement('td');
+    counter.innerText = '#';
+    $('table thead tr.headers').append(counter);
 
     headers.forEach(header => {
         const data = document.createElement('td');
@@ -123,7 +168,7 @@ function popularTabela() {
         `;
 }
 
-$('#emocoes .emocao select').on('touch click change', function(event) {
+$('#emocoes .emocao select').on('touch click change', function (event) {
     if (event.target.value == -1) {
         $(event.target).addClass('is-invalid');
         $(event.target).removeClass('is-valid');
@@ -151,13 +196,25 @@ function aleatorizarFotos() {
 }
 
 $(() => {
-    $('.concordancia input').on('input change', function(event) {
+    $('.concordancia input').on('input change', function (event) {
         $(event.target).next('span').text(respostasFrases[event.target.value]);
     });
 
     aleatorizarFotos();
 });
 
+
+
+
+function limparTudo() {
+    if (prompt('Escreva limpar para apagar todos os dados (ATENÇÃO: ESSA AÇÃO NÃO PODE SER DESFEITA)').toLowerCase() == 'limpar') {
+        localStorage.clear();
+        alert('dados apagados com sucesso');
+        window.location.reload();
+    } else {
+        alert('A confirmação falhou, tente novamente.');
+    }
+}
 
 
 function __teste() {
