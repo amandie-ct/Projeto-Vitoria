@@ -182,7 +182,7 @@ const respostasFrases = {
     1: 'Discordo totalmente',
     2: 'Discordo em parte',
     3: 'Não concordo e nem discordo',
-    4: 'Discordo em parte',
+    4: 'Concordo em parte',
     5: 'Concordo totalmente',
 };
 
